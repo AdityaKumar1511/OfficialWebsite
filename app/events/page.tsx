@@ -27,9 +27,9 @@ export default function EventsPage() {
           
           {/* Page Header */}
           <div className="border-b-4 border-white pb-8 mb-12 max-w-4xl relative">
-            <div className="flex items-center gap-3 text-mono text-xs font-bold tracking-[0.25em] text-[#f25f22] mb-3">
+            <div className="flex items-center gap-3 text-mono text-xs font-bold tracking-[0.25em] text-[#51C4F9] mb-3">
               <span>// ARCHIVE.WNCC.NITP</span>
-              <span className="h-[2px] w-6 bg-[#f25f22]" />
+              <span className="h-[2px] w-6 bg-[#51C4F9]" />
               <span>EVENTS LISTING</span>
             </div>
 
@@ -46,10 +46,10 @@ export default function EventsPage() {
               community at NIT Patna.
             </p>
 
-            {/* Orange Accent block */}
-            <div className="absolute top-0 right-0 w-8 h-8 bg-[#f25f22] hidden md:block select-none" />
+            {/* blue Accent block */}
+            <div className="absolute top-0 right-0 w-8 h-8 bg-[#51C4F9] hidden md:block select-none" />
           </div>
-
+            
           {/* Staggered Event Rows */}
           <div className="divide-y divide-zinc-900 border-t border-zinc-900">
             {EVENTS.map((event, index) => (
@@ -62,7 +62,7 @@ export default function EventsPage() {
           </div>
 
           {/* Bottom Accent line as seen in theme footer */}
-          <div className="mt-16 pt-8 border-t-2 border-[#f25f22] flex flex-col md:flex-row justify-between items-start md:items-center text-mono text-[10px] text-zinc-500 gap-4">
+          <div className="mt-16 pt-8 border-t-2 border-[#51C4F9] flex flex-col md:flex-row justify-between items-start md:items-center text-mono text-[10px] text-zinc-500 gap-4">
             <div>
               <span>// WEB & CODING CLUB NIT PATNA</span>
             </div>
