@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import type { ClubEvent } from '@/lib/types';
 
@@ -12,29 +13,74 @@ export default function EventCard({ event, index }: EventCardProps) {
   const isEven = index % 2 === 0;
   const variation = index % 4;
 
-  // Extract up to 9 images from JSON array, fall back to default single image if missing
-  const imagesArray = event.images && event.images.length > 0 ? event.images.slice(0, 9) : [event.image];
+  // Track the active image index for the interactive slider
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Helper component to render the 3x3 layout collage in full pristine color
-  const DynamicImageGrid = () => (
-    <div className="absolute w-full h-full grid grid-cols-3 grid-rows-3 gap-[2px] bg-zinc-900 p-[2px]">
-      {imagesArray.map((imgSrc, idx) => (
-        <div key={idx} className="relative w-full h-full bg-[#030303] overflow-hidden group/item border border-[#51C4F9]/30">
-          <Image
-            src={imgSrc || '/images/placeholder.png'}
-            alt={`${event.title} item ${idx + 1}`}
-            fill
-            className="object-cover transition-transform duration-700 brightness-105 opacity-90 group-hover/item:scale-110 group-hover/item:opacity-100"
-            sizes="(max-width-768px) 33vw, 150px"
-          />
-        </div>
-      ))}
-      {/* Pad remaining grid cells with blank blocks if data array contains less than 9 entries */}
-      {imagesArray.length < 9 && 
-        Array.from({ length: 9 - imagesArray.length }).map((_, idx) => (
-          <div key={`empty-${idx}`} className="bg-[#030303] border border-zinc-900/50" />
-        ))
-      }
+  // Extract images array or fall back to default fallback single image inside an array
+  const imagesArray = event.images && event.images.length > 0 ? event.images : [event.image];
+
+  // Handler to cycle to the next image manually
+  const handleNextImage = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation(); // Prevents layout card triggers
+    setCurrentImageIndex((prev) => (prev + 1) % imagesArray.length);
+  };
+
+  // Automated 2-second interval sliding
+  useEffect(() => {
+    if (imagesArray.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % imagesArray.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [imagesArray.length]);
+
+  // SMOOTH SLIDING MECHANISM: No black flash, elements slide over each other
+  const ImageSliderFrame = () => (
+    <div 
+      onClick={handleNextImage}
+      className="absolute w-full h-full bg-[#030303] overflow-hidden cursor-pointer select-none group/slider"
+    >
+      {/* Horizontally Moving Image Tracks */}
+      {imagesArray.map((imgSrc, idx) => {
+        // Calculate states for smooth carousel sliding layer logic
+        const isActive = idx === currentImageIndex;
+        
+        return (
+          <div 
+            key={idx}
+            className={`absolute inset-0 w-full h-full transition-transform duration-1000 ease-in-out ${
+              isActive 
+                ? 'translate-x-0 z-10' 
+                : 'translate-x-full z-0'
+            }`}
+            style={{
+              // Pre-loading optimization to prevent any layout shifts
+              visibility: isActive || idx === (currentImageIndex - 1 + imagesArray.length) % imagesArray.length ? 'visible' : 'hidden'
+            }}
+          >
+            <Image
+              src={imgSrc || '/images/placeholder.png'}
+              alt={`${event.title} slide view ${idx + 1}`}
+              fill
+              className="object-cover brightness-105"
+              sizes="(max-width-768px) 100vw, 480px"
+              priority={idx === 0 || isActive}
+            />
+          </div>
+        );
+      })}
+
+      {/* Cyber Tech HUD Overlay Indicator */}
+      <div className="absolute top-3 right-3 bg-black/70 backdrop-blur-md border border-[#51C4F9]/40 px-2 py-1 font-mono text-[9px] text-[#51C4F9] tracking-widest z-30 pointer-events-none uppercase">
+        SLIDE // {String(currentImageIndex + 1).padStart(2, '0')}•{String(imagesArray.length).padStart(2, '0')}
+      </div>
+
+      {/* Subtle click interaction hint UI */}
+      <div className="absolute bottom-3 right-3 bg-black/60 opacity-0 group-hover/slider:opacity-100 transition-opacity duration-300 px-2 py-0.5 border border-zinc-800 font-mono text-[8px] text-zinc-400 z-30 pointer-events-none uppercase tracking-wider">
+        Tap to Skip ▸
+      </div>
     </div>
   );
 
@@ -51,11 +97,9 @@ export default function EventCard({ event, index }: EventCardProps) {
             {/* VARIATION 0 */}
             {variation === 0 && (
               <>
-                {/* Primary 3x3 Image Grid Container with prominent Cyan Border & Scale-up transitions */}
                 <div className="absolute top-0 right-0 w-[78%] h-[78%] border-2 border-[#51C4F9] shadow-2xl overflow-hidden bg-zinc-950 z-20 transition-transform duration-500 ease-out group-hover:scale-105">
-                  <DynamicImageGrid />
+                  <ImageSliderFrame />
                 </div>
-                {/* Secondary overlapping card element - Grayscale by default, color on section hover */}
                 <div className="absolute bottom-0 left-0 w-[45%] h-[55%] shadow-2xl overflow-hidden bg-zinc-900 z-10 transition-transform duration-500 group-hover:-translate-y-1">
                   <Image
                     src={event.image}
@@ -69,7 +113,6 @@ export default function EventCard({ event, index }: EventCardProps) {
                     // VOL_01
                   </div>
                 </div>
-                {/* Structural solid tech badge overlay on highest layer stack */}
                 <div className="absolute bottom-[8%] right-[25%] w-[22%] h-[32%] bg-[#51C4F9] border border-[#51C4F9] text-black flex flex-col justify-between p-3 font-mono z-30 shadow-xl select-none transition-transform duration-500 group-hover:translate-x-1">
                   <div className="flex flex-col justify-between h-full">
                     <span className="text-[8px] font-black leading-none tracking-tight">WnCC //</span>
@@ -83,11 +126,9 @@ export default function EventCard({ event, index }: EventCardProps) {
             {/* VARIATION 1 */}
             {variation === 1 && (
               <>
-                {/* Primary 3x3 Image Grid Container with prominent Cyan Border & Scale-up transitions */}
                 <div className="absolute top-0 left-0 w-[78%] h-[78%] border-2 border-[#51C4F9] shadow-2xl overflow-hidden bg-zinc-950 z-20 transition-transform duration-500 ease-out group-hover:scale-105">
-                  <DynamicImageGrid />
+                  <ImageSliderFrame />
                 </div>
-                {/* Secondary overlapping card element - Grayscale by default, color on section hover */}
                 <div className="absolute bottom-0 right-0 w-[45%] h-[52%] shadow-2xl overflow-hidden bg-zinc-900 z-10 transition-transform duration-500 group-hover:translate-y-1">
                   <Image
                     src={event.image}
@@ -101,7 +142,6 @@ export default function EventCard({ event, index }: EventCardProps) {
                     // SEC_02
                   </div>
                 </div>
-                {/* Structural solid tech badge overlay on highest layer stack */}
                 <div className="absolute top-[8%] right-[32%] w-[24%] h-[30%] bg-[#51C4F9] border border-[#51C4F9] text-black flex flex-col justify-between p-3 font-mono z-30 shadow-xl select-none transition-transform duration-500 group-hover:-translate-x-1">
                   <div className="flex flex-col justify-between h-full">
                     <span className="text-[8px] font-black leading-none tracking-tight">TYPE //</span>
@@ -115,11 +155,9 @@ export default function EventCard({ event, index }: EventCardProps) {
             {/* VARIATION 2 */}
             {variation === 2 && (
               <>
-                {/* Primary 3x3 Image Grid Container with prominent Cyan Border & Scale-up transitions */}
                 <div className="absolute bottom-0 right-0 w-[78%] h-[78%] border-2 border-[#51C4F9] shadow-2xl overflow-hidden bg-zinc-950 z-20 transition-transform duration-500 ease-out group-hover:scale-105">
-                  <DynamicImageGrid />
+                  <ImageSliderFrame />
                 </div>
-                {/* Secondary overlapping card element - Grayscale by default, color on section hover */}
                 <div className="absolute top-0 left-0 w-[48%] h-[50%] shadow-2xl overflow-hidden bg-zinc-900 z-10 transition-transform duration-500 group-hover:scale-105">
                   <Image
                     src={event.image}
@@ -133,7 +171,6 @@ export default function EventCard({ event, index }: EventCardProps) {
                     // NUM_03
                   </div>
                 </div>
-                {/* Structural solid tech badge overlay on highest layer stack */}
                 <div className="absolute bottom-[8%] left-[32%] w-[22%] h-[32%] bg-[#51C4F9] border border-[#51C4F9] text-black flex flex-col justify-between p-3 font-mono z-30 shadow-xl select-none transition-transform duration-500 group-hover:-translate-y-1">
                   <div className="flex flex-col justify-between h-full">
                     <span className="text-[8px] font-black leading-none tracking-tight">LAB //</span>
@@ -147,11 +184,9 @@ export default function EventCard({ event, index }: EventCardProps) {
             {/* VARIATION 3 */}
             {variation === 3 && (
               <>
-                {/* Primary 3x3 Image Grid Container with prominent Cyan Border & Scale-up transitions */}
                 <div className="absolute bottom-0 left-0 w-[78%] h-[78%] border-2 border-[#51C4F9] shadow-2xl overflow-hidden bg-zinc-950 z-20 transition-transform duration-500 ease-out group-hover:scale-105">
-                  <DynamicImageGrid />
+                  <ImageSliderFrame />
                 </div>
-                {/* Secondary overlapping card element - Grayscale by default, color on section hover */}
                 <div className="absolute top-0 right-0 w-[45%] h-[55%] shadow-2xl overflow-hidden bg-zinc-900 z-10 transition-transform duration-500 group-hover:translate-x-1">
                   <Image
                     src={event.image}
@@ -165,7 +200,6 @@ export default function EventCard({ event, index }: EventCardProps) {
                     // ACT_04
                   </div>
                 </div>
-                {/* Structural solid tech badge overlay on highest layer stack */}
                 <div className="absolute top-[18%] left-[28%] w-[24%] h-[30%] bg-[#51C4F9] border border-[#51C4F9] text-black flex flex-col justify-between p-3 font-mono z-30 shadow-xl select-none transition-transform duration-500 group-hover:scale-105">
                   <div className="flex flex-col justify-between h-full">
                     <span className="text-[8px] font-black leading-none tracking-tight">INIT //</span>
@@ -180,8 +214,6 @@ export default function EventCard({ event, index }: EventCardProps) {
 
         {/* TEXT DETAILS SECTION */}
         <div className="lg:col-span-6 flex flex-col justify-center space-y-6">
-          
-          {/* Metadata tag and current operational lifecycle state */}
           <div className="flex items-center gap-3 text-[10px] font-mono font-bold tracking-[0.2em] text-[#51C4F9]">
             <span>// EVENT_{String(index + 1).padStart(2, '0')}</span>
             <span className="h-[1px] w-8 bg-[#51C4F9]/40" />
@@ -190,12 +222,10 @@ export default function EventCard({ event, index }: EventCardProps) {
             </span>
           </div>
 
-          {/* Main Content Header */}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-tight font-display border-b border-zinc-800 pb-4 group-hover:border-[#51C4F9] transition-colors duration-300">
             {event.title}
           </h2>
 
-          {/* Time and Venue metadata rows */}
           <div className="grid grid-cols-2 gap-4 font-mono text-xs text-zinc-500 py-1">
             <div className="space-y-1">
               <span className="text-[#51C4F9] font-extrabold uppercase tracking-widest text-[10px] block">// DATE:</span>
@@ -215,12 +245,10 @@ export default function EventCard({ event, index }: EventCardProps) {
             </div>
           </div>
 
-          {/* Core descriptive text context */}
           <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-sans max-w-xl">
             {event.description}
           </p>
 
-          {/* Category classifications tags mapping */}
           <div className="flex flex-wrap gap-2 pt-1">
             {event.tags.map((tag) => (
               <span 
@@ -232,12 +260,11 @@ export default function EventCard({ event, index }: EventCardProps) {
             ))}
           </div>
 
-          {/* Conditional primary action triggers */}
           <div className="pt-4">
             {event.registrationLink || event.status === 'upcoming' ? (
               <a
                 href={event.registrationLink || '#'}
-                className="inline-block px-7 py-3 text-xs font-mono font-black uppercase tracking-[0.2em] border-2 border-white text-white hover:bg-[#51C4F9] hover:text-black transition-all duration-300 active:scale-95 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.15)] hover:shadow-none select-none"
+                className="inline-block px-7 py-3 text-xs font-mono font-black uppercase tracking-[0.2em] border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-300 active:scale-95 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.15)] hover:shadow-none select-none"
               >
                 REGISTER NOW
               </a>

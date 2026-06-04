@@ -20,7 +20,7 @@ export const EVENTS: ClubEvent[] = [
     status: 'upcoming',
     "images": [
     "https://res.cloudinary.com/dq1fhihvx/image/upload/v1780581524/original-images/wsyju8apliasuzstyguw.png",
-    "/images/grid2.png",
+    "https://res.cloudinary.com/dq1fhihvx/image/upload/v1779891788/original-images/ym5po6fcshotzzzdspji.png",
     "/images/grid3.png",
     "/images/grid4.png",
     "/images/grid5.png",
