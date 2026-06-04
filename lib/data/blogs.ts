@@ -24,7 +24,7 @@ The challenge fostered a spirit of innovation and perseverance, allowing partici
 Overall, the Zero Hour Coding Challenge was a highly engaging and rewarding experience that promoted technical excellence and a passion for coding among students.
     `,
     author: {
-      name: 'Neha Agarwal',
+      name: 'Anushka Singh',
       avatar: '/images/team/placeholder-5.png',
       role: 'AI/ML Team',
     },
@@ -58,7 +58,7 @@ CodeCraft 2.0 successfully fostered a culture of learning, innovation, and healt
 The overwhelming enthusiasm and participation made CodeCraft 2.0 a memorable and successful event, leaving students motivated for future coding challenges and technical competitions.
     `,
     author: {
-      name: 'Amit Sharma',
+      name: 'Tanishka Jindal',
       avatar: '/images/team/placeholder-6.png',
       role: 'Backend Engineering Team',
     },
@@ -83,7 +83,7 @@ The photograph captures vibrant moments from the Zero Hour Coding Challenge, sho
 The image reflects the competitive yet enthusiastic atmosphere of the event, with participants striving to develop efficient solutions within the given time constraints. These glimpses highlight the dedication, technical expertise, and passion for programming displayed by the students throughout the day-long challenge, making Zero Hour Code a memorable experience for all involved.
     `,
     author: {
-      name: 'Rishi Verma',
+      name: 'Anushka Singh',
       avatar: '/images/team/placeholder-2.png',
       role: 'Competitive Programming Team',
     },
@@ -111,7 +111,7 @@ To foster technical learning, the club regularly organizes workshops, seminars, 
 The club also provides opportunities for students to work on innovative projects, contribute to open-source communities, and participate in technical discussions. By creating an environment that promotes curiosity, creativity, and continuous learning, the Web n Coding Club empowers students to develop both technical expertise and problem-solving abilities. Its initiatives play a significant role in preparing aspiring developers and technology enthusiasts for future academic and professional challenges.
     `,
     author: {
-      name: 'Pooja Joshi',
+      name: 'Tanishka Jindal',
       avatar: '/images/team/placeholder-8.png',
       role: 'Cybersecurity Team',
     },
@@ -140,7 +140,7 @@ The club's coding challenges also promote healthy competition and collaboration 
 By consistently organizing technical events and coding challenges, the club has successfully created a vibrant community of learners and innovators, making technology and programming more accessible and engaging for students across the campus.
     `,
     author: {
-      name: 'Deepak Nair',
+      name: 'Sweety Gupta',
       avatar: '/images/team/placeholder-3.png',
       role: 'Frontend Development Team',
     },
@@ -181,7 +181,7 @@ Tatva ultimately became a remarkable celebration of talent, sportsmanship, creat
 As students competed on the field, performed on stage, and participated in various activities, the website quietly powered the event in the background, connecting participants with opportunities and ensuring a seamless registration experience. Tatva thus became not only a celebration of talent but also a testament to how technology and teamwork can come together to create something impactful for the entire campus.
     `,
     author: {
-      name: 'Arjun Mehta',
+      name: 'Anushka Singh',
       avatar: '/images/team/placeholder-1.png',
       role: 'Web Development Team',
     },
@@ -218,7 +218,7 @@ Tatva ultimately became a remarkable celebration of talent, sportsmanship, creat
 As students competed on the field, performed on stage, and participated in various activities, the website quietly powered the event in the background, connecting participants with opportunities and ensuring a seamless registration experience. Tatva thus became not only a celebration of talent but also a testament to how technology and teamwork can come together to create something impactful for the entire campus.
     `,
     author: {
-      name: 'Arjun Mehta',
+      name: 'Anushka Singh',
       avatar: '/images/team/placeholder-1.png',
       role: 'Web Development Team',
     },
@@ -267,7 +267,7 @@ An agent built with LangGraph can:
 The future of software engineering isn't just chatbots answering questions. It's autonomous networks of agents managing complex workflows.
     `,
     author: {
-      name: 'Neha Agarwal',
+      name: 'Anushka Singh',
       avatar: '/images/team/placeholder-5.png',
       role: 'AI/ML Team',
     },
@@ -314,7 +314,7 @@ Terraform creates a crucial file called terraform.tfstate. This file serves as t
 Treating your infrastructure like application code allows you to version control, peer review, and automatically audit your cloud setups.
     `,
     author: {
-      name: 'Suresh Kumar',
+      name: 'Sweety Gupta',
       avatar: '/images/team/placeholder-7.png',
       role: 'DevOps Team',
     },
@@ -361,7 +361,7 @@ Every modern scalable architecture utilizes:
 Mastering system design starts with understanding individual building blocks and learning how to connect them efficiently.
     `,
     author: {
-      name: 'Amit Sharma',
+      name: 'Anushka Singh',
       avatar: '/images/team/placeholder-6.png',
       role: 'Backend Engineering Team',
     },
@@ -407,7 +407,7 @@ While Docker manages single containers, Kubernetes orchestrates hundreds of them
 Adopting Docker and Kubernetes shifts your workflow from basic manual deployments to reliable, automated cloud infrastructure.
     `,
     author: {
-      name: 'Suresh Kumar',
+      name: 'Sweety Gupta',
       avatar: '/images/team/placeholder-7.png',
       role: 'DevOps Team',
     },
@@ -452,7 +452,7 @@ Weak password hashing or insecure session tokens.
 Security is a continuous practice, not a one-time checklist. Stay updated with the OWASP Top 10 standards.
     `,
     author: {
-      name: 'Pooja Joshi',
+      name: 'Tanishka Jindal',
       avatar: '/images/team/placeholder-8.png',
       role: 'Cybersecurity Team',
     },
@@ -502,7 +502,7 @@ The gold standard for massive, enterprise-grade applications requiring strict st
 Don't overengineer. Start simple with Zustand or Context, and migrate to heavier solutions only when complexity demands it.
     `,
     author: {
-      name: 'Arjun Mehta',
+      name: 'Tanishka Jindal',
       avatar: '/images/team/placeholder-1.png',
       role: 'Web Development Team',
     },
@@ -544,7 +544,7 @@ Look for these keywords in problem descriptions:
 Converting an algorithmic complexity from quadratic down to linear is a massive optimization that interviewers love to see.
     `,
     author: {
-      name: 'Kavya Reddy',
+      name: 'Sweety Gupta',
       avatar: '/images/team/placeholder-4.png',
       role: 'DSA Team',
     },
@@ -589,9 +589,9 @@ Examples: MongoDB, DynamoDB, Redis
 Use SQL when data integrity and relationships matter most. Use NoSQL when flexibility and horizontal scaling are your top priorities.
     `,
     author: {
-      name: 'Deepak Nair',
-      avatar: '/images/team/placeholder-3.png',
-      role: 'Frontend Development Team',
+      name: 'Anushka Singh',
+      avatar: '/images/team/placeholder-5.png',
+      role: 'Web Team',
     },
     date: '2026-04-02',
     tags: ['SQL', 'MongoDB', 'Backend'],
@@ -631,7 +631,7 @@ Wrap contexts, rules, and variables inside XML tags (e.g., tags like context). L
 Better prompts yield predictable data formats (like JSON output), which makes integrating AI APIs into your codebase vastly easier.
     `,
     author: {
-      name: 'Neha Agarwal',
+      name: 'Anushka Singh',
       avatar: '/images/team/placeholder-5.png',
       role: 'AI/ML Team',
     },
@@ -675,7 +675,7 @@ Building separate native apps for iOS and Android is expensive. Cross-platform f
 Choose **React Native** if your team already excels at React. Choose **Flutter** if you need high performance and custom, complex animations.
     `,
     author: {
-      name: 'Arjun Mehta',
+      name: 'Anushka Singh',
       avatar: '/images/team/placeholder-1.png',
       role: 'Web Development Team',
     },
@@ -749,7 +749,7 @@ Web development is evolving rapidly with new frameworks and technologies.
 Developers who adapt quickly will stay ahead in the industry.
     `,
   author: {
-    name: 'Aman Raj',
+    name: 'Anushka Singh',
     avatar: '/images/team/placeholder-1.png',
     role: 'Frontend Developer',
   },
@@ -782,7 +782,7 @@ Next.js simplifies full-stack React development.
 Next.js is one of the best frameworks for modern web apps.
     `,
   author: {
-    name: 'Priyanshu Kumar',
+    name: 'Tanishka Singh',
     avatar: '/images/team/placeholder-2.png',
     role: 'Full Stack Developer',
   },
@@ -815,7 +815,7 @@ Tailwind CSS improves development speed significantly.
 A clean utility strategy makes projects easier to maintain.
     `,
   author: {
-    name: 'Neha Singh',
+    name: 'Sweety Gupta',
     avatar: '/images/team/placeholder-3.png',
     role: 'UI Engineer',
   },
@@ -848,7 +848,7 @@ REST APIs are the backbone of modern applications.
 Node.js makes backend development efficient and scalable.
     `,
   author: {
-    name: 'Rahul Verma',
+    name: 'Sweety Gupta',
     avatar: '/images/team/placeholder-4.png',
     role: 'Backend Developer',
   },
@@ -914,7 +914,7 @@ Machine Learning powers many modern technologies.
 ML is becoming an essential skill for developers.
     `,
   author: {
-    name: 'Ritika Sharma',
+    name: 'Sweety',
     avatar: '/images/team/placeholder-6.png',
     role: 'ML Engineer',
   },
@@ -980,7 +980,7 @@ Competitive programming improves logical thinking.
 Consistency is the key to improvement in DSA.
     `,
   author: {
-    name: 'Nikhil Raj',
+    name: 'Anushka Singh',
     avatar: '/images/team/placeholder-8.png',
     role: 'DSA Mentor',
   },
@@ -1013,7 +1013,7 @@ Docker simplifies deployment and development environments.
 Docker is essential for scalable applications.
     `,
   author: {
-    name: 'Sourav Das',
+    name: 'Anushka Singh',
     avatar: '/images/team/placeholder-9.png',
     role: 'DevOps Engineer',
   },
@@ -1046,7 +1046,7 @@ Authentication is crucial for user-based applications.
 Firebase makes authentication simple and reliable.
     `,
   author: {
-    name: 'Pooja Singh',
+    name: 'Anushka Singh',
     avatar: '/images/team/placeholder-10.png',
     role: 'Firebase Developer',
   },
@@ -1078,7 +1078,7 @@ Security is one of the most important aspects of modern development.
 Understanding security fundamentals helps developers build trustworthy systems.
     `,
   author: {
-    name: 'Harsh Pandey',
+    name: 'Anushka Singh',
     avatar: '/images/team/placeholder-11.png',
     role: 'Security Engineer',
   },
@@ -1111,7 +1111,7 @@ Open source contributions help developers grow rapidly.
 Contributing regularly builds both skill and reputation.
     `,
   author: {
-    name: 'Ayush Kumar',
+    name: 'Anushka Singh',
     avatar: '/images/team/placeholder-12.png',
     role: 'Open Source Mentor',
   },
@@ -1144,7 +1144,7 @@ Your portfolio is your digital identity.
 A strong portfolio increases opportunities and visibility.
     `,
   author: {
-    name: 'Rohan Mishra',
+    name: 'Anushka Singh',
     avatar: '/images/team/placeholder-1.png',
     role: 'Frontend Designer',
   },
@@ -1177,7 +1177,7 @@ TypeScript provides type safety and better tooling support.
 TypeScript is essential for scalable modern development.
     `,
   author: {
-    name: 'Karan Singh',
+    name: 'Sweety Gupta',
     avatar: '/images/team/placeholder-2.png',
     role: 'TypeScript Developer',
   },
@@ -1210,7 +1210,7 @@ DevOps combines development and operations practices.
 DevOps skills are highly valuable in modern software teams.
     `,
   author: {
-    name: 'Vikas Raj',
+    name: 'Tanishka Jindal',
     avatar: '/images/team/placeholder-3.png',
     role: 'DevOps Engineer',
   },
@@ -1256,7 +1256,7 @@ Measures unexpected visual shifting of elements during loading.
 A fast application means higher conversion rates and superior search engine visibility.
     `,
     author: {
-      name: 'Deepak Nair',
+      name: 'Sweety Gupta',
       avatar: '/images/team/placeholder-3.png',
       role: 'Frontend Development Team',
     },
