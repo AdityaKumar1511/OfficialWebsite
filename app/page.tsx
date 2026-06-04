@@ -34,15 +34,13 @@ export default function Home() {
       <SentinelHero />
       <hr className="section-divider" />
       
-      <SectionWrapper textureUrl="/images/bg/bg_grunge_2_1779981294962.png">
-        <StoryScrollDemo />
-      </SectionWrapper>
-      <hr className="section-divider" />
+      <StoryScrollDemo />
+      <hr className="w-full border-t-2 border-white" />
       
       <SectionWrapper textureUrl="/images/bg/bg_grunge_3_1779981313259.png">
         <TeamsCarousel />
       </SectionWrapper>
-      <hr className="section-divider" />
+      <hr className="w-full border-t-2 border-white" />
       
       <SectionWrapper textureUrl="/images/bg/bg_grunge_4_1779981332543.png">
         <PIPresidentSection />

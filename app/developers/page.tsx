@@ -4,7 +4,10 @@ import DeveloperCard from '@/components/developers/DeveloperCard';
 
 export const metadata: Metadata = {
   title: 'Developers',
-  description: 'Meet the developers who built the Web & Coding Club NIT Patna website.',
+  description: 'Meet the talented developers behind the Web & Coding Club NIT Patna website.',
+  alternates: {
+    canonical: '/developers',
+  },
 };
 
 export default function DevelopersPage() {

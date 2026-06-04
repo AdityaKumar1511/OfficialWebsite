@@ -5,6 +5,9 @@ import EventCard from '@/components/events/EventCard';
 export const metadata: Metadata = {
   title: 'Events',
   description: 'Explore all events hosted by Web & Coding Club NIT Patna — hackathons, workshops, bootcamps, tech talks, and more.',
+  alternates: {
+    canonical: '/events',
+  },
 };
 
 export default function EventsPage() {

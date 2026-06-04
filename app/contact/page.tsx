@@ -3,7 +3,10 @@ import ContactFormFull from '@/components/contact/ContactFormFull';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
-  description: 'Get in touch with Web & Coding Club NIT Patna. Reach out for collaborations, feedback, or to join our community.',
+  description: 'Get in touch with the Web & Coding Club NIT Patna for collaborations, queries, or joining the community.',
+  alternates: {
+    canonical: '/contact',
+  },
 };
 
 export default function ContactPage() {

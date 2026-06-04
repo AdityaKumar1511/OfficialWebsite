@@ -6,7 +6,10 @@ import Badge from '@/components/ui/Badge';
 
 export const metadata: Metadata = {
   title: 'Blog',
-  description: 'Technical articles, tutorials, and insights from the Web & Coding Club NIT Patna team.',
+  description: 'Insights, tutorials, and updates from the Web & Coding Club NIT Patna community.',
+  alternates: {
+    canonical: '/blog',
+  },
 };
 
 const CATEGORIES = ['Web Dev', 'DSA', 'Open Source', 'AI/ML', 'DevOps', 'Tutorial', 'Career', 'Projects'];

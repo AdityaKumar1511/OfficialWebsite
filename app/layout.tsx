@@ -25,6 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://codingclub.nitp.ac.in"),
   title: {
     default: "Web & Coding Club | NIT Patna",
     template: "%s | WnCC NIT Patna",
@@ -44,26 +45,69 @@ export const metadata: Metadata = {
     "machine learning",
   ],
   authors: [{ name: "Web & Coding Club, NIT Patna" }],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Web & Coding Club | NIT Patna",
     description:
       "A thriving community of builders, coders, and developers at NIT Patna.",
+    url: "https://codingclub.nitp.ac.in",
     type: "website",
     locale: "en_IN",
     siteName: "WnCC NIT Patna",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "WnCC NIT Patna Open Graph Image",
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
     title: "Web & Coding Club | NIT Patna",
     description:
       "A thriving community of builders, coders, and developers at NIT Patna.",
+    images: ["/images/og-image.jpg"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
+  verification: {
+    google: "YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_TAG",
+  }
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Web & Coding Club, NIT Patna",
+  url: "https://codingclub.nitp.ac.in",
+  logo: "https://codingclub.nitp.ac.in/images/logo.png",
+  description: "The official Web and Coding Club of National Institute of Technology, Patna.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Ashok Rajpath",
+    addressLocality: "Patna",
+    addressRegion: "Bihar",
+    postalCode: "800005",
+    addressCountry: "IN"
+  },
+  sameAs: [
+    "https://github.com/wncc-nitp",
+    "https://www.linkedin.com/company/wncc-nitp/"
+  ]
+};
 
 export default function RootLayout({
   children,
@@ -82,6 +126,10 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-sora antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <LenisProvider>
           <Header />
           <div className="min-h-screen">{children}</div>

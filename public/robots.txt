@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Host
+Host: https://codingclub.nitp.ac.in
+
+# Sitemaps
+Sitemap: https://codingclub.nitp.ac.in/sitemap.xml

@@ -5,6 +5,9 @@ import TeamSection from '@/components/team/TeamSection';
 export const metadata: Metadata = {
   title: 'Our Team',
   description: 'Meet the talented individuals behind Web & Coding Club NIT Patna. Explore our 7 specialized teams across Web Dev, Blockchain, Gen AI, ML, PR, Social Media, and Design.',
+  alternates: {
+    canonical: '/team',
+  },
 };
 
 export default function TeamPage() {
