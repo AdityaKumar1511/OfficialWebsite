@@ -56,6 +56,7 @@ export interface ClubEvent {
   longDescription?: string;
   image: string;
   imagePosition?: ImagePosition;
+  images?: string[];
   tags: string[];
   location: string;
   registrationLink?: string;

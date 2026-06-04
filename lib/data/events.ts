@@ -18,6 +18,17 @@ export const EVENTS: ClubEvent[] = [
     tags: ['Hackathon', 'Web3', 'AI'],
     location: 'NIT Patna Campus',
     status: 'upcoming',
+    "images": [
+    "https://res.cloudinary.com/dq1fhihvx/image/upload/v1780581524/original-images/wsyju8apliasuzstyguw.png",
+    "https://res.cloudinary.com/dq1fhihvx/image/upload/v1779891788/original-images/ym5po6fcshotzzzdspji.png",
+    "/images/grid3.png",
+    "/images/grid4.png",
+    "/images/grid5.png",
+    "/images/grid6.png",
+    "/images/grid7.png",
+    "/images/grid8.png",
+    "/images/grid9.png"
+  ]
   },
   {
     id: 'hackfest-2025',
@@ -32,6 +43,17 @@ export const EVENTS: ClubEvent[] = [
     tags: ['Hackathon', 'Competition', 'Prizes'],
     location: 'NIT Patna Auditorium',
     status: 'completed',
+    "images": [
+    "/images/grid1.png",
+    "/images/grid2.png",
+    "/images/grid3.png",
+    "/images/grid4.png",
+    "/images/grid5.png",
+    "/images/grid6.png",
+    "/images/grid7.png",
+    "/images/grid8.png",
+    "/images/grid9.png"
+  ]
   },
   {
     id: 'web3-workshop',
@@ -43,6 +65,17 @@ export const EVENTS: ClubEvent[] = [
     tags: ['Workshop', 'Blockchain', 'Web3'],
     location: 'CS Department Lab',
     status: 'completed',
+    "images": [
+    "/images/grid1.png",
+    "/images/grid2.png",
+    "/images/grid3.png",
+    "/images/grid4.png",
+    "/images/grid5.png",
+    "/images/grid6.png",
+    "/images/grid7.png",
+    "/images/grid8.png",
+    "/images/grid9.png"
+  ]
   },
   {
     id: 'ai-summit',
@@ -54,6 +87,17 @@ export const EVENTS: ClubEvent[] = [
     tags: ['Summit', 'AI', 'Gen AI'],
     location: 'NIT Patna Convention Hall',
     status: 'completed',
+    "images": [
+    "/images/grid1.png",
+    "/images/grid2.png",
+    "/images/grid3.png",
+    "/images/grid4.png",
+    "/images/grid5.png",
+    "/images/grid6.png",
+    "/images/grid7.png",
+    "/images/grid8.png",
+    "/images/grid9.png"
+  ]
   },
   {
     id: 'react-bootcamp',
@@ -66,6 +110,17 @@ export const EVENTS: ClubEvent[] = [
     tags: ['Bootcamp', 'React', 'Web Dev'],
     location: 'Online + In-person',
     status: 'completed',
+    "images": [
+    "/images/grid1.png",
+    "/images/grid2.png",
+    "/images/grid3.png",
+    "/images/grid4.png",
+    "/images/grid5.png",
+    "/images/grid6.png",
+    "/images/grid7.png",
+    "/images/grid8.png",
+    "/images/grid9.png"
+  ]
   },
   {
     id: 'open-source-day',
@@ -77,6 +132,17 @@ export const EVENTS: ClubEvent[] = [
     tags: ['Open Source', 'GitHub', 'Community'],
     location: 'CS Lab 3',
     status: 'completed',
+    "images": [
+    "/images/grid1.png",
+    "/images/grid2.png",
+    "/images/grid3.png",
+    "/images/grid4.png",
+    "/images/grid5.png",
+    "/images/grid6.png",
+    "/images/grid7.png",
+    "/images/grid8.png",
+    "/images/grid9.png"
+  ]
   },
   {
     id: 'ml-kaggle-night',
@@ -88,5 +154,16 @@ export const EVENTS: ClubEvent[] = [
     tags: ['ML', 'Competition', 'Data Science'],
     location: 'CS Department Lab',
     status: 'completed',
+    "images": [
+    "/images/grid1.png",
+    "/images/grid2.png",
+    "/images/grid3.png",
+    "/images/grid4.png",
+    "/images/grid5.png",
+    "/images/grid6.png",
+    "/images/grid7.png",
+    "/images/grid8.png",
+    "/images/grid9.png"
+  ]
   },
 ];

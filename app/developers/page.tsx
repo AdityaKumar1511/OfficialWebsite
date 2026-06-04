@@ -19,7 +19,7 @@ export default function DevelopersPage() {
         <div
           className="absolute inset-0 opacity-50 blur-[6px]"
           style={{
-            backgroundImage: 'url("https://res.cloudinary.com/dq1fhihvx/image/upload/v1779799317/original-images/tv5jy4b1nivenk2asih0.jpg")',
+            backgroundImage: 'url("")',
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
