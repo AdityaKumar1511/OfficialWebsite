@@ -46,7 +46,7 @@ export default function ContactForm() {
       <div className="container-narrow">
         <SectionHeader title="Get In Touch" subtitle="Have a question? We'd love to hear from you" accent="primary" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 mt-8">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-10 mt-8">
           {/* Info */}
           <div className="lg:col-span-2 space-y-6">
             <div className="glass-card p-5">
@@ -86,7 +86,7 @@ export default function ContactForm() {
 
           {/* Form */}
           <div className="lg:col-span-3">
-            <form onSubmit={handleSubmit} className="glass-card p-6 md:p-8 space-y-5">
+            <form onSubmit={handleSubmit} className="glass-card p-4 sm:p-6 md:p-8 space-y-4 sm:space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
                   type="text" name="name" placeholder="Your Name" required

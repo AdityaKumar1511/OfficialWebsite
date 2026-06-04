@@ -243,7 +243,7 @@ export default function BentoGrid() {
 
     return (
       <div
-        className={`bento-item bento-${id} p-8 flex flex-col justify-between group cursor-default relative overflow-hidden rounded-[24px] border border-[#222222] bg-white/5 backdrop-blur-lg hover:border-neutral-700 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,255,255,0.03)] min-h-[300px] ${gridClasses}`}
+        className={`bento-item bento-${id} p-5 sm:p-6 md:p-8 flex flex-col justify-between group cursor-default relative overflow-hidden rounded-[16px] sm:rounded-[20px] md:rounded-[24px] border border-[#222222] bg-white/5 backdrop-blur-lg hover:border-neutral-700 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,255,255,0.03)] min-h-[220px] sm:min-h-[260px] md:min-h-[300px] ${gridClasses}`}
       >
         {/* Subtle, extremely dark hover light source glow centered on the top edge */}
         <div
@@ -257,17 +257,17 @@ export default function BentoGrid() {
               <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#1e1e1e] border border-neutral-800/80 shadow-md select-none group-hover:bg-[#222222] transition-colors duration-500">
                 {icon}
               </div>
-              <h3 className="text-2xl font-bold text-white tracking-tight mt-5 mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white tracking-tight mt-4 sm:mt-5 mb-1.5 sm:mb-2" style={{ fontFamily: 'var(--font-display)' }}>
                 {feature.title}
               </h3>
-              <p className="text-sm text-neutral-400 leading-relaxed font-normal">
+              <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
                 {feature.description}
               </p>
 
               {/* Dynamic statistics for horizontal card */}
               {feature.stat && (
-                <div className="mt-4 relative z-10 flex flex-col gap-1">
-                  <span className="text-4xl font-extrabold text-white tracking-tighter" style={{ fontFamily: 'var(--font-display)' }}>
+                <div className="mt-3 sm:mt-4 relative z-10 flex flex-col gap-1">
+                  <span className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tighter" style={{ fontFamily: 'var(--font-display)' }}>
                     <AnimatedCounter target={parseInt(feature.stat)} suffix={feature.stat.replace(/\d+/, '')} />
                   </span>
                   <p className="text-[10px] uppercase tracking-[0.15em] font-semibold text-neutral-500">
@@ -287,10 +287,10 @@ export default function BentoGrid() {
               <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#1e1e1e] border border-neutral-800/80 shadow-md select-none self-start flex-shrink-0 group-hover:bg-[#222222] transition-colors duration-500">
                 {icon}
               </div>
-              <h3 className="text-2xl font-bold text-white tracking-tight mt-5 mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white tracking-tight mt-4 sm:mt-5 mb-1.5 sm:mb-2" style={{ fontFamily: 'var(--font-display)' }}>
                 {feature.title}
               </h3>
-              <p className="text-sm text-neutral-400 leading-relaxed font-normal">
+              <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
                 {feature.description}
               </p>
             </div>
@@ -301,7 +301,7 @@ export default function BentoGrid() {
             {/* Dynamic statistics at bottom for cards with stats */}
             {feature.stat && (
               <div className="mt-auto relative z-10 flex flex-col gap-1">
-                <span className="text-5xl font-extrabold text-white tracking-tighter" style={{ fontFamily: 'var(--font-display)' }}>
+                <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tighter" style={{ fontFamily: 'var(--font-display)' }}>
                   <AnimatedCounter target={parseInt(feature.stat)} suffix={feature.stat.replace(/\d+/, '')} />
                 </span>
                 <p className="text-[10px] uppercase tracking-[0.15em] font-semibold text-neutral-500">
@@ -316,12 +316,12 @@ export default function BentoGrid() {
   };
 
   return (
-    <section ref={sectionRef} className="section-padding bg-black text-white overflow-hidden py-20 md:py-28">
+    <section ref={sectionRef} className="bg-black text-white overflow-hidden py-14 sm:py-20 md:py-28 px-4 sm:px-6 md:px-8">
       <div className="container-wide px-4 md:px-8 mx-auto">
         <SectionHeader title="What We Offer" subtitle="A complete ecosystem for tech enthusiasts" accent="primary" />
 
         {/* Bento Grid Matrix Container */}
-        <div className="bento-grid-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 mt-12 max-w-[1240px] mx-auto h-auto auto-rows-auto lg:h-[1300px] lg:grid-rows-[repeat(8,_minmax(0,_1fr))]">
+        <div className="bento-grid-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 sm:gap-5 md:gap-6 mt-8 sm:mt-10 md:mt-12 max-w-[1240px] mx-auto h-auto auto-rows-auto lg:h-[1300px] lg:grid-rows-[repeat(8,_minmax(0,_1fr))]">
           {/* Row 1-2 */}
           {renderCard('tech-talks', 'col-span-1 md:col-span-1 lg:col-span-2 lg:row-span-2')}
           {renderCard('hackathons', 'col-span-1 md:col-span-2 lg:col-span-2 lg:row-span-4')}

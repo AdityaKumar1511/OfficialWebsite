@@ -22,13 +22,13 @@ export default function GalleryPreview() {
         falloff={{ near: 0.8, far: 14 }}
         className="h-full w-full overflow-hidden"
       />
-      <div className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center text-center px-3 mix-blend-exclusion text-white">
-        <h1 className="font-serif text-4xl md:text-7xl tracking-tight">
+      <div className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center text-center px-4 sm:px-6 mix-blend-exclusion text-white">
+        <h1 className="font-serif text-2xl sm:text-4xl md:text-6xl lg:text-7xl tracking-tight">
           <span className="italic">Moments Captured;</span> explore our gallery
         </h1>
       </div>
 
-      <div className="absolute bottom-10 left-0 right-0 text-center pointer-events-none font-mono uppercase text-[11px] font-semibold text-white/80">
+      <div className="absolute bottom-6 sm:bottom-10 left-0 right-0 text-center pointer-events-none font-mono uppercase text-[10px] sm:text-[11px] font-semibold text-white/80 px-4">
         <p>Use mouse wheel, arrow keys, or touch to navigate</p>
         <p className="opacity-60">Auto-play resumes after 3 seconds of inactivity</p>
       </div>

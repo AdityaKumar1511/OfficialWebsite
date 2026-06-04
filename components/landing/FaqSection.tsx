@@ -14,15 +14,15 @@ export default function FaqSection() {
     <section className="section-padding">
       <div className="container-narrow">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-display)' }}>
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-display)' }}>
             Got Questions?<br />
             We&apos;ve Got Answers
           </h2>
         </div>
 
         {/* FAQ Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-5">
           {faqs.map((faq) => {
             const isOpen = openId === faq.id;
             
@@ -37,7 +37,7 @@ export default function FaqSection() {
                 onClick={() => toggleFaq(faq.id)}
               >
                 {/* Question */}
-                <div className="p-6 flex justify-between items-center gap-4">
+                <div className="p-4 sm:p-5 md:p-6 flex justify-between items-center gap-3 sm:gap-4">
                   <h3 className={`font-medium text-base ${isOpen ? 'text-white' : 'text-[#A1A6B4]'}`}>
                     {faq.question}
                   </h3>
@@ -50,7 +50,7 @@ export default function FaqSection() {
                 
                 {/* Answer */}
                 <div 
-                  className={`px-6 transition-all duration-300 ease-in-out origin-top ${
+                  className={`px-4 sm:px-5 md:px-6 transition-all duration-300 ease-in-out origin-top ${
                     isOpen ? 'max-h-48 pb-6 opacity-100' : 'max-h-0 pb-0 opacity-0'
                   }`}
                 >

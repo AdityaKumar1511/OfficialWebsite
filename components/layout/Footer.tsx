@@ -30,7 +30,7 @@ export default function Footer() {
       <div className="relative container-wide">
 
         {/* ── Main content: left brand | right links ── */}
-        <div className="flex flex-col gap-8 py-8 sm:flex-row sm:items-stretch sm:justify-between sm:gap-12 lg:gap-20">
+        <div className="flex flex-col gap-8 py-6 sm:py-8 sm:flex-row sm:items-stretch sm:justify-between sm:gap-12 lg:gap-20">
 
           {/* ── LEFT: branding + email + social ── */}
           <div className="flex flex-col sm:min-w-[160px]">

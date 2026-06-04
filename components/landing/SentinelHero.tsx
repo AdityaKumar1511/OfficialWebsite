@@ -20,7 +20,7 @@ export default function SentinelHero() {
       <div className="absolute inset-0 bg-black/30 z-[1] pointer-events-none" />
 
       {/* Content Container */}
-      <div className="relative z-10 pointer-events-none w-full max-w-[90%] sm:max-w-md lg:max-w-2xl px-6 md:px-10 pb-10 md:pb-10 pt-32">
+      <div className="relative z-10 pointer-events-none w-full max-w-full sm:max-w-md lg:max-w-2xl px-4 sm:px-6 md:px-10 pb-8 sm:pb-10 md:pb-10 pt-28 sm:pt-32">
         
         {/* Heading */}
         <h1 
