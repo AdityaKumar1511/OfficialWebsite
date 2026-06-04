@@ -253,7 +253,7 @@ function PresidentCard() {
           height={1440}
           className="relative z-10 h-[380px] sm:h-[500px] md:h-[700px] lg:h-[820px] w-auto object-contain object-bottom transition-transform duration-700 ease-out group-hover:scale-[1.02]"
           style={{
-            scale: 1.6,
+            scale: 1.4,
             translate: '0px 0px',
             transformOrigin: 'bottom center',
           }}
