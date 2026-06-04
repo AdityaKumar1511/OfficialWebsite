@@ -103,7 +103,7 @@ export default function TeamSection({ team }: { team: Team }) {
       <div className={`flex flex-col items-center w-full ${team.members.length > 0 ? "mb-14" : ""}`}>
         <h3 className="text-mono text-xs mb-6 tracking-[0.2em] text-[var(--text-accent)] text-center">// TEAM LEAD</h3>
         <div className="flex flex-col gap-8 items-center justify-center w-full max-w-3xl">
-          <div className="w-full max-w-[325px] flex-shrink-0 member-card">
+          <div className="w-full max-w-[160px] xs:max-w-[200px] sm:max-w-[325px] flex-shrink-0 member-card">
             <MemberCard member={team.leader} teamColor={team.color} teamName={team.name} />
           </div>
           {team.leader.quote && (
@@ -133,7 +133,7 @@ export default function TeamSection({ team }: { team: Team }) {
       {team.members.length > 0 && (
         <div className="flex flex-col items-center w-full">
           <h3 className="text-mono text-xs mb-6 tracking-[0.2em] text-[var(--text-accent)] text-center">// MEMBERS</h3>
-          <div className="flex flex-wrap justify-center gap-6 w-full">
+          <div className="grid grid-cols-2 gap-3 w-full sm:flex sm:flex-wrap sm:justify-center sm:gap-6">
             {team.members.map((member, j) => (
               <div key={`${member.id}-${j}`} className="member-card w-full sm:w-[calc(50%-12px)] md:w-[calc(33.33%-16px)] lg:w-[calc(25%-18px)] max-w-[325px]">
                 <MemberCard member={member} teamColor={team.color} teamName={team.name} />
