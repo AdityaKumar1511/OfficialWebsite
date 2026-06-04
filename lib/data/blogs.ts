@@ -9,50 +9,29 @@ export const BLOG_POSTS: BlogPost[] = [
   // ADVANCED AI & MACHINE LEARNING
   // ============================================================
   {
-    slug: 'deep-dive-into-llm-fine-tuning',
-    title: 'Deep Dive into LLM Fine-Tuning: LoRA and QLoRA',
-    excerpt: 'Learn how developers adapt massive foundational language models to specific domain tasks efficiently without consuming millions in compute costs.',
+    slug: 'zero-hour-coding-challenge',
+    title: 'Zero Hour Coding Challenge',
+    excerpt: 'The Zero Hour Coding Challenge was an intensive day-long coding event organized at our college that challenged programmers to showcase their problem-solving and algorithmic skills under pressure.',
     content: `
-# Deep Dive into LLM Fine-Tuning: LoRA and QLoRA
+# Zero Hour Coding Challenge – 14th February
 
-## Introduction
-While prompt engineering and Retrieval-Augmented Generation (RAG) can take an application far, true domain expertise sometimes requires modifying the model's actual internal weights. Historically, this meant expensive full-parameter training. Today, parameter-efficient methods change everything.
+The Zero Hour Coding Challenge, held on 14th February, was an intensive day-long coding event organized at our college. The competition brought together enthusiastic programmers and problem-solvers who were challenged to demonstrate their technical skills, logical thinking, and creativity under time constraints.
 
----
+Throughout the day, participants worked on a series of coding problems and programming challenges that tested their understanding of algorithms, data structures, debugging, and problem-solving techniques. The event encouraged healthy competition, teamwork, and continuous learning while providing students with an opportunity to apply their classroom knowledge to real-world scenarios.
 
-## What is LoRA?
-Low-Rank Adaptation (LoRA) freezes the original pre-trained model weights and injects trainable rank decomposition matrices into each layer of the Transformer architecture. This reduces the number of trainable parameters by up to 99%.
+The challenge fostered a spirit of innovation and perseverance, allowing participants to enhance their coding proficiency, improve their time-management skills, and gain valuable experience in competitive programming. By the end of the event, students had not only strengthened their technical abilities but also developed confidence in tackling complex programming tasks under pressure.
 
----
-
-## Moving to QLoRA
-QLoRA takes this efficiency a step further by introducing:
-- **4-bit NormalFloat (NF4)**: An information-theoretically optimal quantization data type for normally distributed data.
-- **Double Quantization**: Quantizing the quantization constants to save additional memory.
-- **Paged Optimizers**: Preventing memory spikes during gradient checkpointing.
-
----
-
-## Step-by-Step Implementation Workflow
-1. Load your base model in a quantized 4-bit format.
-2. Prepare the target text dataset with clean instruction-response pairs.
-3. Define your LoRA configuration (Target modules, rank size r, and scaling factor alpha).
-4. Run the training loop using libraries like Hugging Face peft and trl.
-
----
-
-## Conclusion
-Fine-tuning is no longer reserved for massive tech conglomerates. With QLoRA, you can customize a state-of-the-art model right on consumer-grade hardware.
+Overall, the Zero Hour Coding Challenge was a highly engaging and rewarding experience that promoted technical excellence and a passion for coding among students.
     `,
     author: {
-      name: 'Neha Agarwal',
+      name: 'Anushka Singh',
       avatar: '/images/team/placeholder-5.png',
       role: 'AI/ML Team',
     },
-    date: '2026-05-25',
-    tags: ['AI', 'Fine-Tuning', 'Machine Learning'],
-    coverImage: '/images/hero/about-illustration.png',
-    readTime: 12,
+    date: '2026-02-14',
+    tags: ['Coding Challenge', 'Competitive Programming', 'Algorithms'],
+    coverImage: '/images/events/zerohr.jpeg',
+    readTime: 3,
     featured: true,
   },
 
@@ -60,95 +39,58 @@ Fine-tuning is no longer reserved for massive tech conglomerates. With QLoRA, yo
   // SYSTEM DESIGN & ARCHITECTURE
   // ============================================================
   {
-    slug: 'microservices-vs-monoliths-architectural-guide',
-    title: 'Microservices vs Monoliths: The Architectural Guide',
-    excerpt: 'An honest look at engineering trade-offs, deployment frequencies, and the operational overhead of distributed systems.',
+    slug: 'codecraft-2-0-coding-excellence',
+    title: 'CodeCraft 2.0: A Celebration of Coding Excellence',
+    excerpt: 'CodeCraft 2.0, one of the most anticipated technical events on campus, provided students with an exciting opportunity to showcase their problem-solving abilities, programming skills, and competitive spirit.',
     content: `
-# Microservices vs Monoliths: The Architectural Guide
+# CodeCraft 2.0: A Celebration of Coding Excellence
 
-## Introduction
-One of the most consequential decisions an engineering organization can make is choosing how to structure its codebase and runtime systems. Let's break down the realities of Monolithic versus Microservice architectures.
+CodeCraft 2.0, one of the most anticipated technical events on campus, provided students with an exciting opportunity to showcase their problem-solving abilities, programming skills, and competitive spirit. Organized as an individual coding competition, the event attracted enthusiastic participants from various departments who were eager to test their knowledge and compete for prestigious prizes.
 
----
+The event was conducted in two stages. The first stage, an Aptitude Test, was held on **23rd January at 5:30 PM**. This round evaluated participants' logical reasoning, analytical thinking, and quantitative aptitude, serving as a screening process for the final competition.
 
-## The Majestic Monolith
-A monolithic application shares a single codebase, unified memory pool, and a single central database instance.
-- **Advantages**: Incredibly fast initial development pace, simplified end-to-end testing, zero network latency between logical business boundaries.
-- **Disadvantages**: Deployment bottlenecks as teams scale, tight code coupling, and single points of failure.
+Qualified participants advanced to the **offline coding contest**, which took place on **25th January at 4:00 PM** on the college campus. During this round, contestants faced a series of challenging programming problems designed to assess their coding proficiency, algorithmic thinking, and ability to perform under pressure. The competitive atmosphere encouraged innovation, determination, and technical excellence among participants.
 
----
+To recognize outstanding performance, **cash prizes were awarded to the winners**, adding excitement and motivation to the competition. In addition, **certificates were provided to participants and achievers**, acknowledging their efforts and accomplishments.
 
-## The Distributed Microservice Pattern
-Microservices isolate separate business domains into autonomous, independent network applications that communicate via lightweight network APIs or message brokers.
-- **Advantages**: Independent scalability, localized team ownership, technology stack flexibility per service.
-- **Disadvantages**: Complex data consistency puzzles (Saga pattern), tricky distributed tracing requirements, and high DevOps infrastructure complexity.
+CodeCraft 2.0 successfully fostered a culture of learning, innovation, and healthy competition within the student community. The event not only enhanced participants' technical skills but also inspired them to continue exploring the world of programming and problem-solving. It stood as a testament to the college's commitment to promoting technical growth and providing students with platforms to demonstrate their talent.
 
----
-
-## The Hybrid Approach: Modular Monolith
-Before splitting your system into twenty separate network nodes, consider a Modular Monolith. Keep the code in one repository and database, but strictly isolate domain boundaries inside your code's package structure.
-
----
-
-## Conclusion
-Build a monolith until your organizational scaling pains or strict technical isolation boundaries force you to break it apart.
+The overwhelming enthusiasm and participation made CodeCraft 2.0 a memorable and successful event, leaving students motivated for future coding challenges and technical competitions.
     `,
     author: {
-      name: 'Amit Sharma',
+      name: 'Tanishka Jindal',
       avatar: '/images/team/placeholder-6.png',
       role: 'Backend Engineering Team',
     },
-    date: '2026-05-15',
-    tags: ['System Design', 'Microservices', 'Architecture'],
-    coverImage: '/images/events/hackathon.png',
-    readTime: 11,
+    date: '2026-01-25',
+    tags: ['Coding Contest', 'Competitive Programming', 'Algorithms'],
+    coverImage: '/images/events/codecraft2.jpeg',
+    readTime: 4,
   },
 
   // ============================================================
   // ADVANCED DATA STRUCTURES
   // ============================================================
   {
-    slug: 'mastering-segment-trees-for-range-queries',
-    title: 'Mastering Segment Trees for Advanced Range Queries',
-    excerpt: 'Solve complex array interval updates and range calculations efficiently in logarithmic time using Segment Trees.',
+    slug: 'glimpses-of-zero-hour-coding',
+    title: 'Zero Hour Coding Challenge: Glimpses',
+    excerpt: 'The photograph captures vibrant moments from the Zero Hour Coding Challenge, showcasing participants fully immersed in the competition.',
     content: `
-# Mastering Segment Trees for Advanced Range Queries
+# Zero Hour Coding Challenge: Glimpses
 
-## Introduction
-Imagine you have an array of integers and need to perform two frequent actions: updating the value of a specific index, and finding the sum (or minimum) of elements within an arbitrary index range. A standard loop takes O(N) time per query, which is far too slow for competitive programming constraints.
+The photograph captures vibrant moments from the Zero Hour Coding Challenge, showcasing participants fully immersed in the competition. Students can be seen working individually at their systems, demonstrating focus, determination, and problem-solving skills as they tackle challenging coding tasks.
 
----
-
-## Enter the Segment Tree
-A Segment Tree is a binary tree structure where each tree node stores precomputed summary values for a specific sub-segment of the original array. This structural representation compresses range execution workflows down to a blazing-fast logarithmic time metric.
-
----
-
-## Core Operations
-
-### 1. Build
-Recursively construct the tree nodes starting from the base leaves up to the primary root node. Time complexity is O(N).
-
-### 2. Range Query
-Traverse down the structural branches, combining values of internal nodes that fall completely within the target range boundaries. Time complexity is O(log N).
-
-### 3. Point Update
-Modify an element value at a specific index and cascade the structural mathematical change upward along the parent nodes. Time complexity is O(log N).
-
----
-
-## Conclusion
-When plain arrays or prefix sums fall short because of continuous data updates, Segment Trees provide the optimal logarithmic escape route.
+The image reflects the competitive yet enthusiastic atmosphere of the event, with participants striving to develop efficient solutions within the given time constraints. These glimpses highlight the dedication, technical expertise, and passion for programming displayed by the students throughout the day-long challenge, making Zero Hour Code a memorable experience for all involved.
     `,
     author: {
-      name: 'Rishi Verma',
+      name: 'Anushka Singh',
       avatar: '/images/team/placeholder-2.png',
       role: 'Competitive Programming Team',
     },
-    date: '2026-05-01',
-    tags: ['DSA', 'Advanced Data Structures', 'Algorithms'],
-    coverImage: '/images/hero/about-illustration.png',
-    readTime: 13,
+    date: '2026-02-14',
+    tags: ['Coding Challenge', 'Competitive Programming', 'Gallery'],
+    coverImage: '/images/events/hackathon2.jpg',
+    readTime: 2,
     featured: true,
   },
 
@@ -156,237 +98,134 @@ When plain arrays or prefix sums fall short because of continuous data updates, 
   // DEV SEC OPS
   // ============================================================
   {
-    slug: 'building-secure-ci-cd-pipelines',
-    title: 'Building Secure CI/CD Pipelines from Scratch',
-    excerpt: 'Stop leaking production credentials. Learn how to configure safe automated deployment tracks using secret vaults and security scanners.',
+    slug: 'promoting-technology-and-innovation',
+    title: 'Promoting Technology and Innovation',
+    excerpt: 'The Web n Coding Club serves as a dynamic platform for students to explore, learn, and grow in the ever-evolving world of technology through workshops and projects.',
     content: `
-# Building Secure CI/CD Pipelines from Scratch
+# Promoting Technology and Innovation Through the Web n Coding Club
 
-## Introduction
-An automated Continuous Integration and Continuous Deployment (CI/CD) engine is the lifeblood of modern agile development groups. However, if your automated pipeline is configured incorrectly, malicious agents can compromise your source code and infrastructure targets.
+The Web n Coding Club serves as a dynamic platform for students to explore, learn, and grow in the ever-evolving world of technology. The club is dedicated to introducing students to emerging technologies and industry trends, helping them stay updated with the latest advancements in software development, web technologies, artificial intelligence, cloud computing, cybersecurity, and other cutting-edge domains.
 
----
+To foster technical learning, the club regularly organizes workshops, seminars, hands-on training sessions, and interactive learning programs. These events are designed to bridge the gap between theoretical knowledge and practical application, enabling students to gain real-world skills that are highly valued in the technology industry. Through expert-led sessions, peer learning initiatives, and collaborative projects, students are encouraged to experiment with new tools, frameworks, and development practices.
 
-## Essential Security Automation Blocks
-
-### 1. Secret Masking and External Vaults
-Never hardcode API keys, database credentials, or deployment private keys inside your code repository files. Use secret configuration managers like GitHub Actions Secrets or HashiCorp Vault.
-
-### 2. Static Application Security Testing (SAST)
-Inject security scanning runners like SonarQube or Semgrep into your execution track to systematically parse your code strings for vulnerabilities before building images.
-
-### 3. Software Bill of Materials (SBOM) Scanning
-Use container analysis utilities like Trivy to evaluate whether your base Docker images or npm dependencies contain known vulnerabilities.
-
----
-
-## The Secure Pipeline Workflow
-- **Commit**: Code push triggers linting checks.
-- **Scan**: Run SAST and secret-detection processes.
-- **Build**: Compile assets inside an isolated container sandbox.
-- **Deploy**: Authenticate via temporary OpenID Connect (OIDC) roles rather than permanent, static passwords.
-
----
-
-## Conclusion
-Shift security left. Automating your defense perimeter right inside your continuous deployment workflows saves you from emergency mitigation scenarios later.
+The club also provides opportunities for students to work on innovative projects, contribute to open-source communities, and participate in technical discussions. By creating an environment that promotes curiosity, creativity, and continuous learning, the Web n Coding Club empowers students to develop both technical expertise and problem-solving abilities. Its initiatives play a significant role in preparing aspiring developers and technology enthusiasts for future academic and professional challenges.
     `,
     author: {
-      name: 'Pooja Joshi',
+      name: 'Tanishka Jindal',
       avatar: '/images/team/placeholder-8.png',
       role: 'Cybersecurity Team',
     },
     date: '2026-04-18',
-    tags: ['DevOps', 'Security', 'CI/CD'],
+    tags: ['Web n Coding Club', 'Technology', 'Innovation'],
     coverImage: '/images/events/hackathon.png',
-    readTime: 10,
+    readTime: 3,
   },
 
   // ============================================================
   // FRONTEND ARCHITECTURE
   // ============================================================
   {
-    slug: 'understanding-nextjs-rendering-strategies',
-    title: 'Understanding Next.js Rendering Strategies',
-    excerpt: 'Demystifying the difference between SSR, SSG, ISR, and Client-Side Rendering to maximize your application metrics.',
+    slug: 'encouraging-competitive-programming',
+    title: 'Encouraging Competitive Programming',
+    excerpt: 'One of the key objectives of the Web n Coding Club is to cultivate a strong coding culture within the campus through contests, hackathons, and programming challenges.',
     content: `
-# Understanding Next.js Rendering Strategies
+# Encouraging Competitive Programming Through Campus Coding Challenges
 
-## Introduction
-Modern web frameworks are powerful because they don't restrict you to a single way of delivering HTML documents to a browser user. Next.js offers a spectrum of rendering methods, and knowing when to use each is crucial.
+One of the key objectives of the Web n Coding Club is to cultivate a strong coding culture within the campus. To achieve this, the club regularly organizes coding competitions, programming contests, hackathons, and technical challenges that encourage students to test and enhance their problem-solving skills in a competitive environment.
 
----
+These coding events are designed to challenge participants with problems that require logical thinking, algorithmic knowledge, and efficient programming techniques. By engaging in such competitions, students gain valuable experience in time management, critical thinking, debugging, and analytical reasoning. The contests provide an excellent platform for beginners to learn and for experienced programmers to refine their skills.
 
-## Decoding the Strategies
+The club's coding challenges also promote healthy competition and collaboration among students from different academic backgrounds. Participants are motivated to explore new approaches, improve their coding proficiency, and develop confidence in tackling complex technical problems. Through these initiatives, the Web n Coding Club not only identifies and nurtures talented programmers but also inspires students to actively participate in national and international coding competitions.
 
-### Server-Side Rendering (SSR)
-HTML pages are built dynamically on the server for every incoming request.
-- **Best for**: Highly personalized dashboards or live dynamic pricing indexes.
-
-### Static Site Generation (SSG)
-Pages are compiled once at build time. The server delivers identical, cached static assets immediately.
-- **Best for**: Public marketing sites, landing pages, and documentation wikis.
-
-### Incremental Static Regeneration (ISR)
-Enables you to update static pages in the background without needing to completely rebuild your entire multi-page application from scratch.
-- **Best for**: Product catalog lists where minor updates are acceptable.
-
----
-
-## Summary Cheat Sheet
-- **Frequent data changes per user?** Use Server-Side Rendering.
-- **Static data shared by all users?** Use Static Site Generation.
-- **Massive scale static data with intermittent modifications?** Use Incremental Static Regeneration.
-
----
-
-## Conclusion
-By matching your explicit data constraints to the corresponding rendering option, you maximize speed while keeping compute costs to a minimum.
+By consistently organizing technical events and coding challenges, the club has successfully created a vibrant community of learners and innovators, making technology and programming more accessible and engaging for students across the campus.
     `,
     author: {
-      name: 'Deepak Nair',
+      name: 'Sweety Gupta',
       avatar: '/images/team/placeholder-3.png',
       role: 'Frontend Development Team',
     },
     date: '2026-04-05',
-    tags: ['Next.js', 'React', 'Frontend'],
+    tags: ['Competitive Programming', 'Coding Challenge', 'Algorithms'],
     coverImage: '/images/hero/about-illustration.png',
-    readTime: 9,
+    readTime: 3,
   },
 
   // ============================================================
   // DATABASE PERFORMANCE
   // ============================================================
-  {
-    slug: 'mastering-redis-caching-patterns',
-    title: 'Mastering Redis Caching Patterns for Scale',
-    excerpt: 'Protect your primary database from melting under heavy load by executing intelligent Cache-Aside and Write-Through pipelines.',
-    content: `
-# Mastering Redis Caching Patterns for Scale
-
-## Introduction
-When application traffic spikes, the primary database is almost always the first component to hit a performance bottleneck. Disk access operations are simply too expensive. An in-memory cache layer like Redis fixes this.
-
----
-
-## Strategic Caching Behaviors
-
-### 1. Cache-Aside Pattern
-The application attempts to read data from Redis first. If a cache miss occurs, the backend reads the record from the primary database, updates Redis, and returns the result to the user.
-- **Advantage**: Resilient to cache infrastructure failure states.
-
-### 2. Write-Through Pattern
-The application treats the caching tier as the primary location data writes occur. Redis automatically updates the underlying database when it receives updates.
-- **Advantage**: Avoids stale data scenarios completely.
-
----
-
-## Setting Eviction Policies
-Memory is finite and expensive. Always configure a Time-To-Live (TTL) constraint on your keys alongside an appropriate cache eviction framework, such as Least Recently Used (LRU).
-
----
-
-## Conclusion
-Caching isn't just about throwing a fast store in front of a slow service. It requires planning your data life cycles to prevent cache stampedes and out-of-memory errors.
-    `,
-    author: {
-      name: 'Amit Sharma',
-      avatar: '/images/team/placeholder-6.png',
-      role: 'Backend Engineering Team',
-    },
-    date: '2026-03-25',
-    tags: ['Redis', 'Caching', 'Backend'],
-    coverImage: '/images/events/hackathon.png',
-    readTime: 8,
-  },
 
   // ============================================================
   // WEB SCRAPING & AUTOMATION
   // ============================================================
   {
-    slug: 'building-resilient-web-scrapers-with-playwright',
-    title: 'Building Resilient Web Scrapers with Playwright',
-    excerpt: 'Extract data reliably from JavaScript-heavy web interfaces using modern browser automation patterns and proxy rotation.',
+    slug: 'tatva-powering-grand-celebration',
+    title: 'Tatva: Powering a Grand Celebration Through Technology',
+    excerpt: 'Tatva emerged as one of the most vibrant and eagerly awaited events on campus, bringing together students from diverse interests and talents for a memorable celebration of sports, culture, and creativity.',
     content: `
-# Building Resilient Web Scrapers with Playwright
+# Tatva: Powering a Grand Celebration Through Technology
 
-## Introduction
-Data drives the modern world. Often, the data you need for training AI models or building market comparison dashboards doesn't live behind a convenient public REST API. Web scraping fills this gap.
+Tatva emerged as one of the most vibrant and eagerly awaited events on campus, bringing together students from diverse interests and talents for a memorable celebration of sports, culture, and creativity. The event served as a platform where participants could showcase their abilities, compete with enthusiasm, and engage in a wide range of activities that fostered teamwork, confidence, and community spirit.
 
----
+While Tatva featured numerous sporting competitions that energized the campus atmosphere, it was much more than a sports event. The celebration also included exciting cultural programs such as fashion showcases, singing performances, and other entertaining activities that highlighted the creativity and talent of the student community. The combination of athletic excellence and cultural expression made Tatva a truly inclusive event, attracting participation from students across various disciplines.
 
-## Why Playwright Over Puppeteer?
-While older tools struggle with modern web architectures, Playwright brings built-in resilience features:
-- **Auto-wait functionality**: Eliminates brittle hardcoded sleep statements.
-- **Multi-context isolation**: Spawns independent browser contexts instantly with minimal overhead.
-- **Native geolocation/user-agent mocking**: Simulates human behavior patterns across different screen sizes.
+A significant aspect of Tatva's success was its seamless digital experience, made possible through the dedicated efforts of the Web n Coding Club. Recognizing the need for an efficient and accessible registration process, the club designed, developed, and deployed the official Tatva website. The platform served as the central hub for event information and participant registrations, enabling students to easily explore various competitions and register for their preferred events.
 
----
+From planning the user interface to implementing the registration workflows, the Web n Coding Club worked diligently to create a website that was both functional and user-friendly. The development process involved designing responsive layouts, ensuring smooth navigation, optimizing performance, and making the platform accessible across different devices. The website was then successfully deployed and made live, allowing students to access it anytime and from anywhere.
 
-## Defeating anti-scraping blockades
-When gathering public web data at scale, remember these rules:
-- Rotate premium proxy connections to distribute geographic request footprints.
-- Randomize navigation click sequences and cursor paths.
-- Respect the rules outlined inside target websites' robots.txt parameters.
+The live platform significantly streamlined event management by reducing manual registration efforts and providing participants with a convenient digital solution. Students could quickly browse event details, submit registrations, and stay informed about various activities taking place during Tatva. This not only enhanced the overall participant experience but also demonstrated the impact of technology in organizing large-scale college events.
 
----
+The project provided valuable hands-on experience for members of the Web n Coding Club, allowing them to apply their technical knowledge to a real-world application. Through collaboration, problem-solving, and continuous testing, the team transformed an idea into a fully functional platform that played an important role in the event's execution. The successful deployment of the website showcased the club's capabilities in web development and reinforced the importance of digital solutions in modern event management.
 
-## Conclusion
-Playwright transforms web automation from an unpredictable guessing game into a robust, event-driven data extraction pipeline.
+Tatva ultimately became a remarkable celebration of talent, sportsmanship, creativity, and innovation. The event created lasting memories for participants and attendees while also highlighting the contribution of student developers who worked behind the scenes to make the experience smoother and more accessible. The successful launch and operation of the Tatva website stands as a proud achievement for the Web n Coding Club, reflecting its commitment to leveraging technology for the benefit of the college community.
+
+As students competed on the field, performed on stage, and participated in various activities, the website quietly powered the event in the background, connecting participants with opportunities and ensuring a seamless registration experience. Tatva thus became not only a celebration of talent but also a testament to how technology and teamwork can come together to create something impactful for the entire campus.
     `,
     author: {
-      name: 'Arjun Mehta',
+      name: 'Anushka Singh',
       avatar: '/images/team/placeholder-1.png',
       role: 'Web Development Team',
     },
     date: '2026-03-12',
-    tags: ['Playwright', 'Web Scraping', 'Automation'],
-    coverImage: '/images/hero/about-illustration.png',
-    readTime: 10,
+    tags: ['Tatva', 'Event Management', 'Web Development'],
+    coverImage: '/images/events/tatvaweb.jpeg',
+    readTime: 5,
   },
 
   // ============================================================
   // ALGORITHMIC PARADIGMS
   // ============================================================
   {
-    slug: 'demystifying-backtracking-algorithms',
-    title: 'Demystifying Backtracking Algorithms Step-by-step',
-    excerpt: 'Master the core mechanics of recursive state exploration to solve N-Queens, Sudoku, and subset generation challenges.',
+    slug: 'tatva-powering-grand-celebration',
+    title: 'Tatva: Powering a Grand Celebration Through Technology',
+    excerpt: 'Tatva emerged as one of the most vibrant and eagerly awaited events on campus, bringing together students from diverse interests and talents for a memorable celebration of sports, culture, and creativity.',
     content: `
-# Demystifying Backtracking Algorithms Step-by-step
+# Tatva: Powering a Grand Celebration Through Technology
 
-## Introduction
-Backtracking is a systematic algorithmic strategy used to find solutions to problems that require exploring a wide range of configuration combinations. Think of it as a controlled, brute-force search that prunes dead ends early.
+Tatva emerged as one of the most vibrant and eagerly awaited events on campus, bringing together students from diverse interests and talents for a memorable celebration of sports, culture, and creativity. The event served as a platform where participants could showcase their abilities, compete with enthusiasm, and engage in a wide range of activities that fostered teamwork, confidence, and community spirit.
 
----
+While Tatva featured numerous sporting competitions that energized the campus atmosphere, it was much more than a sports event. The celebration also included exciting cultural programs such as fashion showcases, singing performances, and other entertaining activities that highlighted the creativity and talent of the student community. The combination of athletic excellence and cultural expression made Tatva a truly inclusive event, attracting participation from students across various disciplines.
 
-## The Core Concept Rule
-The structural backbone of any backtracking algorithm follows an explicit three-step lifecycle template inside a recursive loop structure:
-1. **Choose**: Place an element into your tentative solution tracker.
-2. **Explore**: Move forward and recursively test if this selection can lead to a valid final state.
-3. **Un-choose**: If you hit a constraint violation, undo your choice and return to the previous state to try a different path.
+A significant aspect of Tatva's success was its seamless digital experience, made possible through the dedicated efforts of the Web n Coding Club. Recognizing the need for an efficient and accessible registration process, the club designed, developed, and deployed the official Tatva website. The platform served as the central hub for event information and participant registrations, enabling students to easily explore various competitions and register for their preferred events.
 
----
+From planning the user interface to implementing the registration workflows, the Web n Coding Club worked diligently to create a website that was both functional and user-friendly. The development process involved designing responsive layouts, ensuring smooth navigation, optimizing performance, and making the platform accessible across different devices. The website was then successfully deployed and made live, allowing students to access it anytime and from anywhere.
 
-## Famous Interview Questions
-- **N-Queens Puzzle**: Placing non-attacking chess queens onto grid layouts.
-- **Sudoku Solver**: Computing row and block constraints dynamically.
-- **Permutations/Subsets**: Generating all unique variations of an input array.
+The live platform significantly streamlined event management by reducing manual registration efforts and providing participants with a convenient digital solution. Students could quickly browse event details, submit registrations, and stay informed about various activities taking place during Tatva. This not only enhanced the overall participant experience but also demonstrated the impact of technology in organizing large-scale college events.
 
----
+The project provided valuable hands-on experience for members of the Web n Coding Club, allowing them to apply their technical knowledge to a real-world application. Through collaboration, problem-solving, and continuous testing, the team transformed an idea into a fully functional platform that played an important role in the event's execution. The successful deployment of the website showcased the club's capabilities in web development and reinforced the importance of digital solutions in modern event management.
 
-## Conclusion
-Backtracking can feel abstract at first, but once you view it as a Depth-First Search over a state-space tree, the recursive structure clicks.
+Tatva ultimately became a remarkable celebration of talent, sportsmanship, creativity, and innovation. The event created lasting memories for participants and attendees while also highlighting the contribution of student developers who worked behind the scenes to make the experience smoother and more accessible. The successful launch and operation of the Tatva website stands as a proud achievement for the Web n Coding Club, reflecting its commitment to leveraging technology for the benefit of the college community.
+
+As students competed on the field, performed on stage, and participated in various activities, the website quietly powered the event in the background, connecting participants with opportunities and ensuring a seamless registration experience. Tatva thus became not only a celebration of talent but also a testament to how technology and teamwork can come together to create something impactful for the entire campus.
     `,
     author: {
-      name: 'Kavya Reddy',
-      avatar: '/images/team/placeholder-4.png',
-      role: 'DSA Team',
+      name: 'Anushka Singh',
+      avatar: '/images/team/placeholder-1.png',
+      role: 'Web Development Team',
     },
-    date: '2026-02-28',
-    tags: ['DSA', 'Recursion', 'Algorithms'],
-    coverImage: '/images/events/hackathon.png',
-    readTime: 9,
+    date: '2026-03-12',
+    tags: ['Tatva', 'Event Management', 'Web Development'],
+    coverImage: '/images/events/tatvaweb.jpeg',
+    readTime: 5,
   },
 
   // ============================================================
@@ -428,7 +267,7 @@ An agent built with LangGraph can:
 The future of software engineering isn't just chatbots answering questions. It's autonomous networks of agents managing complex workflows.
     `,
     author: {
-      name: 'Neha Agarwal',
+      name: 'Anushka Singh',
       avatar: '/images/team/placeholder-5.png',
       role: 'AI/ML Team',
     },
@@ -475,7 +314,7 @@ Terraform creates a crucial file called terraform.tfstate. This file serves as t
 Treating your infrastructure like application code allows you to version control, peer review, and automatically audit your cloud setups.
     `,
     author: {
-      name: 'Suresh Kumar',
+      name: 'Sweety Gupta',
       avatar: '/images/team/placeholder-7.png',
       role: 'DevOps Team',
     },
@@ -522,7 +361,7 @@ Every modern scalable architecture utilizes:
 Mastering system design starts with understanding individual building blocks and learning how to connect them efficiently.
     `,
     author: {
-      name: 'Amit Sharma',
+      name: 'Anushka Singh',
       avatar: '/images/team/placeholder-6.png',
       role: 'Backend Engineering Team',
     },
@@ -568,7 +407,7 @@ While Docker manages single containers, Kubernetes orchestrates hundreds of them
 Adopting Docker and Kubernetes shifts your workflow from basic manual deployments to reliable, automated cloud infrastructure.
     `,
     author: {
-      name: 'Suresh Kumar',
+      name: 'Sweety Gupta',
       avatar: '/images/team/placeholder-7.png',
       role: 'DevOps Team',
     },
@@ -613,7 +452,7 @@ Weak password hashing or insecure session tokens.
 Security is a continuous practice, not a one-time checklist. Stay updated with the OWASP Top 10 standards.
     `,
     author: {
-      name: 'Pooja Joshi',
+      name: 'Tanishka Jindal',
       avatar: '/images/team/placeholder-8.png',
       role: 'Cybersecurity Team',
     },
@@ -663,7 +502,7 @@ The gold standard for massive, enterprise-grade applications requiring strict st
 Don't overengineer. Start simple with Zustand or Context, and migrate to heavier solutions only when complexity demands it.
     `,
     author: {
-      name: 'Arjun Mehta',
+      name: 'Tanishka Jindal',
       avatar: '/images/team/placeholder-1.png',
       role: 'Web Development Team',
     },
@@ -705,7 +544,7 @@ Look for these keywords in problem descriptions:
 Converting an algorithmic complexity from quadratic down to linear is a massive optimization that interviewers love to see.
     `,
     author: {
-      name: 'Kavya Reddy',
+      name: 'Sweety Gupta',
       avatar: '/images/team/placeholder-4.png',
       role: 'DSA Team',
     },
@@ -750,9 +589,9 @@ Examples: MongoDB, DynamoDB, Redis
 Use SQL when data integrity and relationships matter most. Use NoSQL when flexibility and horizontal scaling are your top priorities.
     `,
     author: {
-      name: 'Deepak Nair',
-      avatar: '/images/team/placeholder-3.png',
-      role: 'Frontend Development Team',
+      name: 'Anushka Singh',
+      avatar: '/images/team/placeholder-5.png',
+      role: 'Web Team',
     },
     date: '2026-04-02',
     tags: ['SQL', 'MongoDB', 'Backend'],
@@ -792,7 +631,7 @@ Wrap contexts, rules, and variables inside XML tags (e.g., tags like context). L
 Better prompts yield predictable data formats (like JSON output), which makes integrating AI APIs into your codebase vastly easier.
     `,
     author: {
-      name: 'Neha Agarwal',
+      name: 'Anushka Singh',
       avatar: '/images/team/placeholder-5.png',
       role: 'AI/ML Team',
     },
@@ -836,7 +675,7 @@ Building separate native apps for iOS and Android is expensive. Cross-platform f
 Choose **React Native** if your team already excels at React. Choose **Flutter** if you need high performance and custom, complex animations.
     `,
     author: {
-      name: 'Arjun Mehta',
+      name: 'Anushka Singh',
       avatar: '/images/team/placeholder-1.png',
       role: 'Web Development Team',
     },
@@ -910,7 +749,7 @@ Web development is evolving rapidly with new frameworks and technologies.
 Developers who adapt quickly will stay ahead in the industry.
     `,
   author: {
-    name: 'Aman Raj',
+    name: 'Anushka Singh',
     avatar: '/images/team/placeholder-1.png',
     role: 'Frontend Developer',
   },
@@ -943,7 +782,7 @@ Next.js simplifies full-stack React development.
 Next.js is one of the best frameworks for modern web apps.
     `,
   author: {
-    name: 'Priyanshu Kumar',
+    name: 'Tanishka Singh',
     avatar: '/images/team/placeholder-2.png',
     role: 'Full Stack Developer',
   },
@@ -976,7 +815,7 @@ Tailwind CSS improves development speed significantly.
 A clean utility strategy makes projects easier to maintain.
     `,
   author: {
-    name: 'Neha Singh',
+    name: 'Sweety Gupta',
     avatar: '/images/team/placeholder-3.png',
     role: 'UI Engineer',
   },
@@ -1009,7 +848,7 @@ REST APIs are the backbone of modern applications.
 Node.js makes backend development efficient and scalable.
     `,
   author: {
-    name: 'Rahul Verma',
+    name: 'Sweety Gupta',
     avatar: '/images/team/placeholder-4.png',
     role: 'Backend Developer',
   },
@@ -1075,7 +914,7 @@ Machine Learning powers many modern technologies.
 ML is becoming an essential skill for developers.
     `,
   author: {
-    name: 'Ritika Sharma',
+    name: 'Sweety',
     avatar: '/images/team/placeholder-6.png',
     role: 'ML Engineer',
   },
@@ -1141,7 +980,7 @@ Competitive programming improves logical thinking.
 Consistency is the key to improvement in DSA.
     `,
   author: {
-    name: 'Nikhil Raj',
+    name: 'Anushka Singh',
     avatar: '/images/team/placeholder-8.png',
     role: 'DSA Mentor',
   },
@@ -1174,7 +1013,7 @@ Docker simplifies deployment and development environments.
 Docker is essential for scalable applications.
     `,
   author: {
-    name: 'Sourav Das',
+    name: 'Anushka Singh',
     avatar: '/images/team/placeholder-9.png',
     role: 'DevOps Engineer',
   },
@@ -1207,7 +1046,7 @@ Authentication is crucial for user-based applications.
 Firebase makes authentication simple and reliable.
     `,
   author: {
-    name: 'Pooja Singh',
+    name: 'Anushka Singh',
     avatar: '/images/team/placeholder-10.png',
     role: 'Firebase Developer',
   },
@@ -1239,7 +1078,7 @@ Security is one of the most important aspects of modern development.
 Understanding security fundamentals helps developers build trustworthy systems.
     `,
   author: {
-    name: 'Harsh Pandey',
+    name: 'Anushka Singh',
     avatar: '/images/team/placeholder-11.png',
     role: 'Security Engineer',
   },
@@ -1272,7 +1111,7 @@ Open source contributions help developers grow rapidly.
 Contributing regularly builds both skill and reputation.
     `,
   author: {
-    name: 'Ayush Kumar',
+    name: 'Anushka Singh',
     avatar: '/images/team/placeholder-12.png',
     role: 'Open Source Mentor',
   },
@@ -1305,7 +1144,7 @@ Your portfolio is your digital identity.
 A strong portfolio increases opportunities and visibility.
     `,
   author: {
-    name: 'Rohan Mishra',
+    name: 'Anushka Singh',
     avatar: '/images/team/placeholder-1.png',
     role: 'Frontend Designer',
   },
@@ -1338,7 +1177,7 @@ TypeScript provides type safety and better tooling support.
 TypeScript is essential for scalable modern development.
     `,
   author: {
-    name: 'Karan Singh',
+    name: 'Sweety Gupta',
     avatar: '/images/team/placeholder-2.png',
     role: 'TypeScript Developer',
   },
@@ -1371,7 +1210,7 @@ DevOps combines development and operations practices.
 DevOps skills are highly valuable in modern software teams.
     `,
   author: {
-    name: 'Vikas Raj',
+    name: 'Tanishka Jindal',
     avatar: '/images/team/placeholder-3.png',
     role: 'DevOps Engineer',
   },
@@ -1417,7 +1256,7 @@ Measures unexpected visual shifting of elements during loading.
 A fast application means higher conversion rates and superior search engine visibility.
     `,
     author: {
-      name: 'Deepak Nair',
+      name: 'Sweety Gupta',
       avatar: '/images/team/placeholder-3.png',
       role: 'Frontend Development Team',
     },

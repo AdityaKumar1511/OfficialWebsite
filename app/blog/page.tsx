@@ -33,7 +33,7 @@ export default function BlogPage() {
             <div>
               <p className="text-mono text-xs mb-2 tracking-[0.2em]">// BLOG</p>
               <h1
-                className="gradient-text-amber"
+                className="gradient-text-primary"
                 style={{
                   fontFamily: 'Bebas Neue, var(--font-display), sans-serif',
                   fontSize: 'clamp(52px, 8vw, 80px)',
@@ -113,26 +113,26 @@ export default function BlogPage() {
             {/* ── CENTER COLUMN ── */}
             <div style={{ gridColumn: 2, gridRow: '1 / 3', display: 'flex', flexDirection: 'column', gap: '14px' }}>
 
-              {/* Feature card — lime green */}
+              {/* Feature card — blue shade matching btn-primary */}
               <Link
                 href={`/blog/${featurePost.slug}`}
                 className="group block"
-                style={{ background: '#d4e9a0', borderRadius: '20px', padding: '22px 22px 18px', position: 'relative', flex: 1, textDecoration: 'none', transition: 'transform 0.25s' }}
+                style={{ background: 'var(--accent-primary)', borderRadius: '20px', padding: '22px 22px 18px', position: 'relative', flex: 1, textDecoration: 'none', transition: 'transform 0.25s' }}
               >
-                <div style={{ position: 'absolute', top: 18, right: 18, width: 32, height: 32, background: 'rgba(0,0,0,0.08)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, color: '#1a1a1a' }}>
+                <div style={{ position: 'absolute', top: 18, right: 18, width: 32, height: 32, background: 'rgba(0,0,0,0.08)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, color: '#050505' }}>
                   ↗
                 </div>
-                <p style={{ fontSize: 11, fontWeight: 600, color: '#4a6a1a', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: 10, display: 'flex', alignItems: 'center', gap: 4 }}>
-                  <span style={{ display: 'inline-block', width: 5, height: 5, background: '#4a6a1a', borderRadius: '50%' }} />
+                <p style={{ fontSize: 11, fontWeight: 600, color: 'rgba(5, 5, 5, 0.75)', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: 10, display: 'flex', alignItems: 'center', gap: 4 }}>
+                  <span style={{ display: 'inline-block', width: 5, height: 5, background: 'rgba(5, 5, 5, 0.75)', borderRadius: '50%' }} />
                   {featurePost.tags[0]}
                 </p>
-                <h2 style={{ fontFamily: 'Bebas Neue, var(--font-display), sans-serif', fontSize: 'clamp(28px, 3vw, 38px)', lineHeight: 1.05, color: '#1a1a1a', letterSpacing: '1.5px', margin: '0 0 10px' }}>
+                <h2 style={{ fontFamily: 'Bebas Neue, var(--font-display), sans-serif', fontSize: 'clamp(28px, 3vw, 38px)', lineHeight: 1.05, color: '#050505', letterSpacing: '1.5px', margin: '0 0 10px' }}>
                   {featurePost.title.toUpperCase()}
                 </h2>
-                <p style={{ fontSize: 12, color: '#3a4a1a', lineHeight: 1.7, margin: 0 }}>
+                <p style={{ fontSize: 12, color: 'rgba(5, 5, 5, 0.85)', lineHeight: 1.7, margin: 0 }}>
                   {featurePost.excerpt.slice(0, 160)}
                   {featurePost.excerpt.length > 160 && (
-                    <span style={{ color: '#2a5a0a', fontWeight: 600, textDecoration: 'underline' }}> More</span>
+                    <span style={{ color: '#050505', fontWeight: 600, textDecoration: 'underline' }}> More</span>
                   )}
                 </p>
               </Link>
@@ -171,7 +171,7 @@ export default function BlogPage() {
                   {secondaryPost.tags[0]}
                   {secondaryPost.featured && (
                     <span style={{ background: 'rgba(0,0,0,0.10)', borderRadius: 999, padding: '2px 8px', fontSize: 10, fontWeight: 600, color: '#1a4a6a', marginLeft: 4 }}>
-                      Hot · {new Date(secondaryPost.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })}
+                      {new Date(secondaryPost.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })}
                     </span>
                   )}
                 </p>
