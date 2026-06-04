@@ -4,7 +4,10 @@ import GalleryGrid from '@/components/gallery/GalleryGrid';
 
 export const metadata: Metadata = {
   title: 'Gallery',
-  description: 'Browse photos from Web & Coding Club NIT Patna events, workshops, hackathons, and community activities.',
+  description: 'Explore the visual journey of Web & Coding Club NIT Patna through past events, workshops, and hackathons.',
+  alternates: {
+    canonical: '/gallery',
+  },
 };
 
 export default function GalleryPage() {

@@ -2,8 +2,12 @@
 // WnCC NIT Patna — Type Definitions
 // ============================================================
 
-/** Hierarchy levels for team members */
-export type MemberHierarchy = 'post-bearer' | 'senior' | 'junior';
+/** Image position/crop control for card images */
+export interface ImagePosition {
+  x: number;      // 0-100 (CSS object-position X %)
+  y: number;      // 0-100 (CSS object-position Y %)
+  zoom: number;   // 1.0 = normal, 1.5 = 150% zoom (applied as CSS scale)
+}
 
 /** Social link for a team member */
 export interface SocialLinks {
@@ -19,8 +23,13 @@ export interface TeamMember {
   id: string;
   name: string;
   role: string;
-  hierarchy: MemberHierarchy;
   image: string;
+  imagePosition?: ImagePosition;
+  imageTransform?: {
+    x?: number;
+    y?: number;
+    scale?: number;
+  };
   socials: SocialLinks;
   quote?: string;
 }
@@ -46,6 +55,7 @@ export interface ClubEvent {
   description: string;
   longDescription?: string;
   image: string;
+  imagePosition?: ImagePosition;
   tags: string[];
   location: string;
   registrationLink?: string;
@@ -62,6 +72,7 @@ export interface GalleryImage {
   category: string;
   width: number;
   height: number;
+  imagePosition?: ImagePosition;
 }
 
 /** Blog post */
@@ -78,6 +89,7 @@ export interface BlogPost {
   date: string;
   tags: string[];
   coverImage: string;
+  coverImagePosition?: ImagePosition;
   readTime: number;
   featured?: boolean;
 }
@@ -87,10 +99,16 @@ export interface Developer {
   id: string;
   name: string;
   role: string;
+  imagePosition?: ImagePosition;
   image: string;
   socials: SocialLinks;
   contributions: string[];
   techStack: string[];
+  imageTransform?: {
+    x?: number;
+    y?: number;
+    scale?: number;
+  };
 }
 
 /** Navigation link */

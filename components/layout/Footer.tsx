@@ -12,124 +12,154 @@ const socialIcons: Record<string, string> = {
   discord: 'M20.317 4.37a19.79 19.79 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.74 19.74 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 01.078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.009c.12.099.246.198.373.292a.077.077 0 01-.006.127 12.3 12.3 0 01-1.873.892.076.076 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.84 19.84 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.028z',
 };
 
+const socialHoverBackgrounds: Record<string, string> = {
+  github: 'hover:bg-[#24292e]',
+  linkedin: 'hover:bg-[#0a66c2]',
+  instagram: 'hover:bg-[#e1306c]',
+  twitter: 'hover:bg-[#1d9bf0]',
+  youtube: 'hover:bg-[#ff0000]',
+  discord: 'hover:bg-[#5865f2]',
+};
+
 export default function Footer() {
   return (
-    <footer className="relative bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)]">
-      {/* Top gradient border */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-[var(--accent-coral)] to-transparent" />
+    <footer className="relative overflow-hidden border-t border-white/10 bg-[#0A0A0C]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.06),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(212,100,59,0.12),transparent_26%),linear-gradient(180deg,rgba(255,255,255,0.02),transparent_30%)]" />
+      <div className="pointer-events-none absolute inset-0 opacity-18 bg-[radial-gradient(rgba(255,255,255,0.12)_1px,transparent_1px)] bg-size-[22px_22px]" />
 
-      <div className="container-wide py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
-          {/* Brand column */}
-          <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="inline-block">
-              <span className="text-2xl font-bold gradient-text-coral" style={{ fontFamily: 'var(--font-display)' }}>
-                WnCC
-              </span>
-              <span className="text-sm text-[var(--text-muted)] ml-2 tracking-wider uppercase">
-                NIT Patna
-              </span>
-            </Link>
-            <p className="text-body max-w-sm">{SITE_CONFIG.description}</p>
-            <p className="text-mono text-xs">{SITE_CONFIG.email}</p>
-          </div>
+      <div className="relative container-wide">
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-sm font-semibold text-[var(--text-primary)] mb-4 tracking-wider uppercase">
-              Quick Links
-            </h4>
-            <ul className="space-y-3">
-              {FOOTER_LINKS.quickLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-[var(--text-secondary)] hover:text-[var(--accent-coral)] transition-colors duration-300"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
+        {/* ── Main content: left brand | right links ── */}
+        <div className="flex flex-col gap-8 py-8 sm:flex-row sm:items-stretch sm:justify-between sm:gap-12 lg:gap-20">
+
+          {/* ── LEFT: branding + email + social ── */}
+          <div className="flex flex-col sm:min-w-[160px]">
+            {/* Name + email group */}
+            <div className="space-y-2">
+              <Link href="/" className="inline-flex items-baseline gap-2">
+                <span
+                  className="text-xl font-semibold leading-none text-(--text-primary)"
+                  style={{ fontFamily: 'var(--font-display)' }}
+                >
+                  {SITE_CONFIG.shortName.toUpperCase()}
+                </span>
+                <span className="text-[0.6rem] uppercase tracking-[0.25em] text-(--text-secondary)">
+                  {SITE_CONFIG.institution}
+                </span>
+              </Link>
+              <span className="block font-mono text-[10px] tracking-widest text-(--text-secondary)">
+                {SITE_CONFIG.email}
+              </span>
+            </div>
+
+            {/* Social icons pushed to bottom */}
+            <div className="mt-auto flex flex-wrap gap-2 pt-5">
+              {SOCIAL_LINKS.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-(--text-muted) transition-all duration-300 hover:-translate-y-0.5 hover:scale-105 hover:border-transparent hover:text-white ${socialHoverBackgrounds[social.icon] || 'hover:bg-white/10'}`}
+                  aria-label={social.name}
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d={socialIcons[social.icon] || ''} />
+                  </svg>
+                </a>
               ))}
-            </ul>
+            </div>
           </div>
 
-          {/* Resources */}
-          <div>
-            <h4 className="text-sm font-semibold text-[var(--text-primary)] mb-4 tracking-wider uppercase">
-              Resources
-            </h4>
-            <ul className="space-y-3">
-              {FOOTER_LINKS.resources.map((link) => (
-                <li key={link.href}>
-                  {'isExternal' in link && link.isExternal ? (
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-[var(--text-secondary)] hover:text-[var(--accent-amber)] transition-colors duration-300 inline-flex items-center gap-1"
-                    >
-                      {link.label}
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
-                      </svg>
-                    </a>
-                  ) : (
+          {/* ── RIGHT: link columns ── */}
+          <div className="grid grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-3 sm:gap-x-10 sm:gap-y-0 lg:gap-x-16">
+
+            {/* Teams */}
+            <div className="space-y-2">
+              <h5 className="text-xs font-semibold uppercase tracking-[0.2em] text-(--text-primary)">
+                Teams
+              </h5>
+              <ul className="space-y-0.5">
+                {FOOTER_LINKS.teams.slice(0, 5).map((link) => (
+                  <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-[var(--text-secondary)] hover:text-[var(--accent-amber)] transition-colors duration-300"
+                      className="group inline-flex text-xs text-(--text-muted) transition-all duration-200 hover:text-(--text-primary)"
                     >
-                      {link.label}
+                      <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+                        {link.label}
+                      </span>
                     </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Teams */}
-          <div>
-            <h4 className="text-sm font-semibold text-[var(--text-primary)] mb-4 tracking-wider uppercase">
-              Teams
-            </h4>
-            <ul className="space-y-3">
-              {FOOTER_LINKS.teams.slice(0, 5).map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-[var(--text-secondary)] hover:text-[var(--accent-sage)] transition-colors duration-300"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {/* Quick Links */}
+            <div className="space-y-2">
+              <h5 className="text-xs font-semibold uppercase tracking-[0.2em] text-(--text-primary)">
+                Quick Links
+              </h5>
+              <ul className="space-y-0.5">
+                {FOOTER_LINKS.quickLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="group inline-flex text-[11px] text-(--text-muted) transition-all duration-200 hover:text-(--text-primary)"
+                    >
+                      <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+                        {link.label}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Resources — spans full width on mobile 2-col, normal on sm+ */}
+            <div className="col-span-2 space-y-2 sm:col-span-1">
+              <h5 className="text-xs font-semibold uppercase tracking-[0.2em] text-(--text-primary)">
+                Resources
+              </h5>
+              <ul className="space-y-0.5">
+                {FOOTER_LINKS.resources.map((link) => (
+                  <li key={link.href}>
+                    {'isExternal' in link && link.isExternal ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex text-[11px] text-(--text-muted) transition-all duration-200 hover:text-(--text-primary)"
+                      >
+                        <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+                          {link.label}
+                        </span>
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="group inline-flex text-[11px] text-(--text-muted) transition-all duration-200 hover:text-(--text-primary)"
+                      >
+                        <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+                          {link.label}
+                        </span>
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-16 pt-8 border-t border-[var(--border-subtle)] flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-xs text-[var(--text-muted)]">
+        {/* ── Bottom bar: copyright ── */}
+        <div className="border-t border-white/5 py-4">
+          <p className="text-center text-[10px] text-(--text-muted) md:text-xs">
             © {new Date().getFullYear()} {SITE_CONFIG.fullName}. Built with ❤️ by WnCC developers.
           </p>
-
-          {/* Social Icons */}
-          <div className="flex items-center gap-4">
-            {SOCIAL_LINKS.map((social) => (
-              <a
-                key={social.name}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] flex items-center justify-center text-[var(--text-muted)] hover:text-[var(--accent-coral)] hover:border-[var(--accent-coral)] transition-all duration-300"
-                aria-label={social.name}
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d={socialIcons[social.icon] || ''} />
-                </svg>
-              </a>
-            ))}
-          </div>
         </div>
+
       </div>
     </footer>
   );
