@@ -9,9 +9,9 @@ interface MemberCardProps {
 }
 
 // 8-pointed star / sparkle badge SVG
-const SparkleIcon = () => (
+const SparkleIcon = ({ className = "w-7 h-7" }: { className?: string }) => (
   <svg
-    className="w-7 h-7 flex-shrink-0 text-white fill-current stroke-[#0e1713] stroke-[2.5] drop-shadow-[2px_2px_0px_#0e1713]"
+    className={`${className} flex-shrink-0 text-white fill-current stroke-[#0e1713] stroke-[2.5] drop-shadow-[2px_2px_0px_#0e1713]`}
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -20,8 +20,8 @@ const SparkleIcon = () => (
 );
 
 // High-fidelity Barcode SVG
-const Barcode = () => (
-  <svg className="w-20 h-6 text-[#0e1713]" viewBox="0 0 100 30" fill="currentColor">
+const Barcode = ({ className = "w-20 h-6" }: { className?: string }) => (
+  <svg className={`${className} text-[#0e1713]`} viewBox="0 0 100 30" fill="currentColor">
     <rect x="0" y="0" width="3" height="30" />
     <rect x="5" y="0" width="1" height="30" />
     <rect x="8" y="0" width="4" height="30" />
@@ -95,9 +95,9 @@ const SocialBadge = ({ type, url }: { type: string; url: string }) => {
       className="group/social shrink-0 hover:opacity-80 transition-opacity duration-150"
     >
       {/* Circle icon badge */}
-      <span className="w-6 h-6 rounded-full border-[1.5px] border-[#0e1713]/80 flex items-center justify-center bg-transparent group-hover/social:bg-[#0e1713] group-hover/social:border-[#0e1713] transition-all duration-200 shrink-0 shadow-[0_1px_3px_rgba(0,0,0,0.15)]">
+      <span className="w-3.5 h-3.5 xs:w-4 xs:h-4 sm:w-6 sm:h-6 rounded-full border xs:border-[1.5px] border-[#0e1713]/80 flex items-center justify-center bg-transparent group-hover/social:bg-[#0e1713] group-hover/social:border-[#0e1713] transition-all duration-200 shrink-0 shadow-[0_1px_3px_rgba(0,0,0,0.15)]">
         <svg
-          className="w-3.5 h-3.5 fill-current text-[#0e1713] group-hover/social:text-[#fafaf7] transition-colors duration-200"
+          className="w-2 h-2 xs:w-2.5 xs:h-2.5 sm:w-3.5 sm:h-3.5 fill-current text-[#0e1713] group-hover/social:text-[#fafaf7] transition-colors duration-200"
           viewBox="0 0 24 24"
         >
           {getSocialIconPath(type)}
@@ -138,7 +138,7 @@ export default function MemberCard({ member, teamColor = '#D4643B', teamName = '
   const displaySocials = socialEntries.slice(0, 3);
 
   return (
-    <div className="group relative w-full max-w-[325px] mx-auto aspect-[3/5] bg-[#fafaf7] text-[#0e1713] border-[3px] border-[#0e1713] rounded-2xl overflow-hidden shadow-[6px_6px_0px_#0e1713] hover:-translate-y-1.5 hover:shadow-[10px_10px_0px_#0e1713] transition-all duration-300 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] select-none">
+    <div className="group relative w-full max-w-[325px] mx-auto aspect-[3/5] bg-[#fafaf7] text-[#0e1713] border-2 sm:border-[3px] border-[#0e1713] rounded-xl sm:rounded-2xl overflow-hidden shadow-[4px_4px_0px_#0e1713] hover:-translate-y-1.5 hover:shadow-[6px_6px_0px_#0e1713] sm:shadow-[6px_6px_0px_#0e1713] sm:hover:shadow-[10px_10px_0px_#0e1713] transition-all duration-300 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] select-none [--img-scale-factor:0.46] xs:[--img-scale-factor:0.58] sm:[--img-scale-factor:1]">
       
       {/* 1. Waves Background Texture */}
       <svg
@@ -162,42 +162,42 @@ export default function MemberCard({ member, teamColor = '#D4643B', teamName = '
       <div className="relative h-full flex flex-col justify-between p-4 z-10">
         
         {/* 2. Top Header Info */}
-        <div className="flex items-center justify-between border-b border-[#0e1713]/25 pb-2">
-          <div className="flex items-center gap-1.5">
+        <div className="flex items-center justify-between border-b border-[#0e1713]/25 pb-1 sm:pb-2">
+          <div className="flex items-center gap-1 sm:gap-1.5">
             {/* WnCC mini bracket logo */}
-            <div className="w-5 h-5 rounded-md bg-[#0e1713] text-[#fafaf7] flex items-center justify-center font-mono text-[9px] font-bold shadow-[1px_1px_0px_rgba(0,0,0,0.2)]">
+            <div className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 rounded-sm sm:rounded-md bg-[#0e1713] text-[#fafaf7] flex items-center justify-center font-mono text-[5px] xs:text-[7px] sm:text-[9px] font-bold shadow-[1px_1px_0px_rgba(0,0,0,0.2)]">
               &lt;/&gt;
             </div>
             <div className="flex flex-col leading-[1.05]">
-              <span className="font-display font-[800] text-[10px] tracking-tight uppercase">
+              <span className="font-display font-[800] text-[6px] xs:text-[8px] sm:text-[10px] tracking-tight uppercase">
                 {teamName}
               </span>
-              <span className="font-mono text-[6.5px] text-[#0e1713]/60 font-semibold tracking-wider">
+              <span className="font-mono text-[4px] xs:text-[5px] sm:text-[6.5px] text-[#0e1713]/60 font-semibold tracking-wider">
                 NIT PATNA CHAPTER
               </span>
             </div>
           </div>
           {/* Traffic dots */}
-          <div className="flex items-center gap-1">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#ff5f56]" />
-            <span className="w-1.5 h-1.5 rounded-full bg-[#ffbd2e]" />
+          <div className="flex items-center gap-0.5 sm:gap-1">
+            <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-[#ff5f56]" />
+            <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-[#ffbd2e]" />
             <span
-              className="w-1.5 h-1.5 rounded-full"
+              className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full"
               style={{ backgroundColor: teamColor }}
             />
           </div>
         </div>
 
         {/* 3. Card Body: Sidebar & Picture Panel */}
-        <div className="relative flex-grow my-3 flex gap-3 h-[60%] min-h-[220px]">
+        <div className="relative flex-grow my-1 sm:my-3 flex gap-1.5 sm:gap-3 h-[60%] min-h-[100px] xs:min-h-[130px] sm:min-h-[220px]">
           
           {/* A. Vertical Role Sidebar */}
-          <div className="w-9 bg-[#0e1713] rounded-lg border-2 border-[#0e1713] flex flex-col items-center justify-end py-3 text-white overflow-hidden shadow-[2px_2px_0px_rgba(0,0,0,0.15)] relative">
+          <div className="w-4 xs:w-5 sm:w-9 bg-[#0e1713] rounded-sm sm:rounded-lg border sm:border-2 border-[#0e1713] flex flex-col items-center justify-end py-1 sm:py-3 text-white overflow-hidden shadow-[2px_2px_0px_rgba(0,0,0,0.15)] relative">
             {/* Textured lines inside role sidebar */}
-            <div className="absolute top-0 inset-x-0 h-4 bg-yellow-300 border-b-2 border-[#0e1713]" />
+            <div className="absolute top-0 inset-x-0 h-1 sm:h-4 bg-yellow-300 border-b sm:border-b-2 border-[#0e1713]" />
             <div className="flex-grow flex items-center justify-center">
               <span
-                className="font-mono text-[10px] font-[800] tracking-[0.22em] text-[#fafaf7] whitespace-nowrap select-none"
+                className="font-mono text-[5px] xs:text-[7px] sm:text-[10px] font-[800] tracking-[0.22em] text-[#fafaf7] whitespace-nowrap select-none"
                 style={{
                   writingMode: 'vertical-rl',
                   transform: 'rotate(180deg)',
@@ -209,7 +209,7 @@ export default function MemberCard({ member, teamColor = '#D4643B', teamName = '
           </div>
 
           {/* B. Center Graphic / Photo Canvas */}
-          <div className="flex-grow relative rounded-xl border-[2.5px] border-[#0e1713] overflow-visible shadow-[3px_3px_0px_rgba(14,23,19,0.15)]">
+          <div className="flex-grow relative rounded-lg sm:rounded-xl border sm:border-[2.5px] border-[#0e1713] overflow-visible shadow-[3px_3px_0px_rgba(14,23,19,0.15)]">
             {/* Dynamic solid background with subtle paint halftone or noise */}
             
             <div
@@ -254,7 +254,7 @@ export default function MemberCard({ member, teamColor = '#D4643B', teamName = '
                   className="w-[90%] h-[95%] object-cover object-bottom transition-transform duration-500 ease-out group-hover:scale-110"
                   style={{
                     objectPosition: `${member.imagePosition?.x ?? 50}% ${member.imagePosition?.y ?? 30}%`,
-                    transform: `translate(${member.imageTransform?.x || 0}px, ${member.imageTransform?.y || 0}px) scale(${member.imageTransform?.scale || 1})`,
+                    transform: `translate(calc(${member.imageTransform?.x || 0}px * var(--img-scale-factor)), calc(${member.imageTransform?.y || 0}px * var(--img-scale-factor))) scale(calc(1 + (${member.imageTransform?.scale || 1} - 1) * var(--img-scale-factor)))`,
                     filter: 'drop-shadow(2px 2px 0 white) drop-shadow(-2px -2px 0 white) drop-shadow(-2px 2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(0 25px 25px rgba(0,0,0,0.5)) contrast(1.25)'
                   }}
                 />
@@ -267,12 +267,12 @@ export default function MemberCard({ member, teamColor = '#D4643B', teamName = '
           {/* 4. Interactive POP-ART Stickers — siblings to photo canvas, float above borders */}
 
           {/* A. Lightning Bolts (Top Left) — stacked with different angles */}
-          <div className="absolute -top-4 left-[38px] z-20 flex gap-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 origin-top-left pointer-events-none">
+          <div className="absolute -top-2 left-[18px] sm:-top-4 sm:left-[38px] z-20 flex gap-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 origin-top-left pointer-events-none">
             {/* Bolt 1 — large, tilted left */}
             <svg
-              className="w-9 h-9 -rotate-[15deg]"
+              className="w-4 h-4 xs:w-6 xs:h-6 sm:w-9 sm:h-9 -rotate-[15deg]"
               style={{
-                filter: `drop-shadow(2px 2px 0px #0e1713) drop-shadow(4px 4px 0px ${teamColor})`,
+                filter: `drop-shadow(1px 1px 0px #0e1713) sm:drop-shadow(2px 2px 0px #0e1713) drop-shadow(2px 2px 0px ${teamColor}) sm:drop-shadow(4px 4px 0px ${teamColor})`,
               }}
               viewBox="0 0 24 24"
               fill="#ffde00"
@@ -284,9 +284,9 @@ export default function MemberCard({ member, teamColor = '#D4643B', teamName = '
             </svg>
             {/* Bolt 2 — smaller, tilted right, slight offset */}
             <svg
-              className="w-6 h-6 rotate-[8deg] -ml-2 mt-2"
+              className="w-3 h-3 xs:w-4 xs:h-4 sm:w-6 sm:h-6 rotate-[8deg] -ml-1 mt-1 sm:-ml-2 sm:mt-2"
               style={{
-                filter: `drop-shadow(1.5px 1.5px 0px #0e1713) drop-shadow(3px 3px 0px ${teamColor})`,
+                filter: `drop-shadow(0.5px 0.5px 0px #0e1713) sm:drop-shadow(1.5px 1.5px 0px #0e1713) drop-shadow(1.5px 1.5px 0px ${teamColor}) sm:drop-shadow(3px 3px 0px ${teamColor})`,
               }}
               viewBox="0 0 24 24"
               fill="#ffde00"
@@ -299,10 +299,10 @@ export default function MemberCard({ member, teamColor = '#D4643B', teamName = '
           </div>
 
           {/* B. Starburst Exclamation (Top Right) — white starburst, yellow inner circle, black exclamation */}
-          <div className="absolute -top-5 -right-3 z-20 group-hover:scale-110 group-hover:-rotate-10 transition-all duration-300 origin-top-right pointer-events-none">
+          <div className="absolute -top-2.5 -right-1.5 sm:-top-5 sm:-right-3 z-20 group-hover:scale-110 group-hover:-rotate-10 transition-all duration-300 origin-top-right pointer-events-none">
             <svg
-              className="w-16 h-16"
-              style={{ filter: 'drop-shadow(2.5px 2.5px 0px rgba(14,23,19,0.9))' }}
+              className="w-7 h-7 xs:w-10 xs:h-10 sm:w-16 sm:h-16"
+              style={{ filter: 'drop-shadow(1.5px 1.5px 0px rgba(14,23,19,0.9)) sm:drop-shadow(2.5px 2.5px 0px rgba(14,23,19,0.9))' }}
               viewBox="0 0 100 100"
             >
               {/* 16-point starburst — white fill, thick black border */}
@@ -345,10 +345,10 @@ export default function MemberCard({ member, teamColor = '#D4643B', teamName = '
           </div>
 
           {/* C. Cloud Lightbulb Sticker (Bottom Right) — yellow cloud with hand-drawn bulb */}
-          <div className="absolute -bottom-5 -right-3.5 z-30 group-hover:scale-110 group-hover:-translate-x-1.5 transition-all duration-300 origin-bottom-right pointer-events-none">
+          <div className="absolute -bottom-2.5 -right-1.5 sm:-bottom-5 sm:-right-3.5 z-30 group-hover:scale-110 group-hover:-translate-x-1.5 transition-all duration-300 origin-bottom-right pointer-events-none">
             <svg
-              className="w-16 h-16"
-              style={{ filter: 'drop-shadow(3px 3px 0px rgba(14,23,19,0.9))' }}
+              className="w-7 h-7 xs:w-10 xs:h-10 sm:w-16 sm:h-16"
+              style={{ filter: 'drop-shadow(1.5px 1.5px 0px rgba(14,23,19,0.9)) sm:drop-shadow(3px 3px 0px rgba(14,23,19,0.9))' }}
               viewBox="0 0 100 100"
             >
               {/* Comic Cloud Shape — filled yellow */}
@@ -401,26 +401,32 @@ export default function MemberCard({ member, teamColor = '#D4643B', teamName = '
         </div>
 
         {/* 5. Name Overlay Block */}
-        <div className="relative z-20 -mt-6 mb-2 mr-1 flex flex-col font-display font-[900] leading-[0.9] select-none pl-[47px]">
+        <div className="relative z-20 -mt-3 xs:-mt-4 sm:-mt-6 mb-1 sm:mb-2 mr-1 flex flex-col font-display font-[900] leading-[0.9] select-none pl-5 xs:pl-7 sm:pl-[47px]">
           {/* Sparkle inline icon overlayed next to last name */}
           <div className="flex items-center gap-1.5">
             <span
-              className="text-[1.8rem] font-[900] text-white uppercase tracking-tight select-none"
+              className="text-[0.85rem] xs:text-[1.1rem] sm:text-[1.8rem] font-[900] text-white uppercase tracking-tight select-none"
               style={{
+                WebkitTextStroke: '1.5px #0e1713',
+                paintOrder: 'stroke fill',
                 textShadow:
-                  '-2.5px -2.5px 0 #0e1713, 2.5px -2.5px 0 #0e1713, -2.5px 2.5px 0 #0e1713, 2.5px 2.5px 0 #0e1713, 4px 4px 0px #0e1713',
+                  '2px 2px 0px #0e1713, -1px -1px 0 #0e1713, 1px -1px 0 #0e1713, -1px 1px 0 #0e1713, 1px 1px 0 #0e1713',
               }}
             >
               {firstName}
             </span>
           </div>
-          <div className="flex items-center gap-2 mt-0.5">
-            <SparkleIcon />
+          <div className="flex items-center gap-1 xs:gap-2 mt-0.5">
+            <div className="scale-[0.5] sm:scale-100 origin-left flex-shrink-0 w-3 h-3 xs:w-4 xs:h-4 sm:w-7 sm:h-7 flex items-center justify-center">
+              <SparkleIcon className="w-3 h-3 xs:w-4 xs:h-4 sm:w-7 sm:h-7" />
+            </div>
             <span
-              className="text-[1.8rem] font-[900] text-white uppercase tracking-tight select-none"
+              className="text-[0.85rem] xs:text-[1.1rem] sm:text-[1.8rem] font-[900] text-white uppercase tracking-tight select-none"
               style={{
+                WebkitTextStroke: '1.5px #0e1713',
+                paintOrder: 'stroke fill',
                 textShadow:
-                  '-2.5px -2.5px 0 #0e1713, 2.5px -2.5px 0 #0e1713, -2.5px 2.5px 0 #0e1713, 2.5px 2.5px 0 #0e1713, 4px 4px 0px #0e1713',
+                  '2px 2px 0px #0e1713, -1px -1px 0 #0e1713, 1px -1px 0 #0e1713, -1px 1px 0 #0e1713, 1px 1px 0 #0e1713',
               }}
             >
               {lastName}
@@ -429,21 +435,21 @@ export default function MemberCard({ member, teamColor = '#D4643B', teamName = '
         </div>
 
         {/* 6. Footer Layout */}
-        <div className="border-t-[2.5px] border-[#0e1713] pt-2 mt-1 flex flex-col gap-2">
+        <div className="border-t sm:border-t-[2.5px] border-[#0e1713] pt-1 mt-0.5 sm:pt-2 sm:mt-1 flex flex-col gap-1 sm:gap-2">
           {/* Barcode & Period */}
-          <div className="flex items-center justify-between gap-2 px-1">
+          <div className="flex items-center justify-between gap-1 sm:gap-2 px-1">
             <div className="flex items-center gap-1">
-              <Barcode />
+              <Barcode className="w-10 h-3 xs:w-14 xs:h-4.5 sm:w-20 sm:h-6" />
               {/* Expand technical arrow graphic */}
-              <svg className="w-3.5 h-3.5 text-[#0e1713]/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <svg className="w-2 h-2 xs:w-2.5 xs:h-2.5 sm:w-3.5 sm:h-3.5 text-[#0e1713]/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
               </svg>
             </div>
             <div className="flex flex-col items-end leading-[1.1]">
-              <span className="font-mono text-[7px] font-[800] tracking-wider text-[#0e1713]/55 uppercase">
+              <span className="font-mono text-[4px] xs:text-[5px] sm:text-[7px] font-[800] tracking-wider text-[#0e1713]/55 uppercase">
                 MEMBERSHIP TERM
               </span>
-              <span className="font-mono text-[9px] font-[900] tracking-tight text-[#0e1713]">
+              <span className="font-mono text-[5px] xs:text-[6px] sm:text-[9px] font-[900] tracking-tight text-[#0e1713]">
                 PERIODE 2025/2026
               </span>
             </div>
@@ -451,31 +457,31 @@ export default function MemberCard({ member, teamColor = '#D4643B', teamName = '
 
           {/* 7. Bottom Social Accent Bar */}
           <div
-            className="h-9 -mx-4 -mb-4 flex items-center relative overflow-hidden"
+            className="h-5 xs:h-6 sm:h-9 -mx-4 -mb-4 flex items-center relative overflow-hidden"
             style={{ backgroundColor: teamColor }}
           >
             {/* ── Golden quarter-circle arc in bottom-left corner ── */}
             {/* Sized to exactly fill the bar height (h-9 = 36px → w-9 h-9) */}
-            <div className="absolute bottom-0 left-0 w-9 h-9 bg-[#ffde00] rounded-tr-full z-10 flex-shrink-0" />
+            <div className="absolute bottom-0 left-0 w-5 h-5 xs:w-6 xs:h-6 sm:w-9 sm:h-9 bg-[#ffde00] rounded-tr-full z-10 flex-shrink-0" />
 
             {/* Subtle inner shadow overlay to give depth */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-transparent pointer-events-none z-10" />
 
             {/* Social badges row — centred with left offset to clear the arc */}
-            <div className="relative z-20 flex items-center justify-center w-full pl-10 pr-3 gap-3">
+            <div className="relative z-20 flex items-center justify-center w-full pl-6 xs:pl-8 sm:pl-10 pr-1.5 xs:pr-2 sm:pr-3 gap-1 xs:gap-1.5 sm:gap-3">
               {displaySocials.map(({ type, url }) => (
                 <SocialBadge key={type} type={type} url={url} />
               ))}
               {displaySocials.length === 0 && (
-                <span className="text-[8px] font-bold text-white/50 italic tracking-wide">
+                <span className="text-[5px] xs:text-[6px] sm:text-[8px] font-bold text-white/50 italic tracking-wide">
                   no links
                 </span>
               )}
             </div>
 
             {/* Mini crosshair decorative dot — bottom right */}
-            <div className="absolute right-2 bottom-1.5 w-3 h-3 rounded-full border border-white/30 flex items-center justify-center pointer-events-none opacity-40 z-20">
-              <span className="w-1 h-1 rounded-full bg-white" />
+            <div className="absolute right-2 bottom-1.5 w-1.5 h-1.5 xs:w-2 xs:h-2 sm:w-3 h-3 rounded-full border border-white/30 flex items-center justify-center pointer-events-none opacity-40 z-20">
+              <span className="w-0.5 h-0.5 sm:w-1 sm:h-1 rounded-full bg-white" />
             </div>
           </div>
         </div>

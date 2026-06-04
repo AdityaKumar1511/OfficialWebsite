@@ -31,7 +31,7 @@ export const DEVELOPERS: Developer[] = [
     },
     contributions: [],
     techStack: [],
-    imageTransform: { x: 0, y: -20, scale: 1.2 },
+    imageTransform: { x: 0, y: -10, scale: 1.45 },
   },
   {
     id: 'dev-3',

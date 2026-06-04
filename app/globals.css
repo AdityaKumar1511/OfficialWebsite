@@ -88,7 +88,21 @@
   --radius: 0.5rem;
   --nav-button: hsl(200 12% 15%);
   --hero-bg: hsl(210 15% 4%);
+  --img-scale-factor: 0.46;
 }
+
+@media (min-width: 400px) {
+  :root {
+    --img-scale-factor: 0.58;
+  }
+}
+
+@media (min-width: 640px) {
+  :root {
+    --img-scale-factor: 1;
+  }
+}
+
 
 @theme inline {
   --color-background: var(--background);

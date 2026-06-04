@@ -49,7 +49,7 @@ export default function DevelopersPage() {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8 md:gap-10">
+          <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:justify-center sm:gap-8 md:gap-10">
             {DEVELOPERS.map((dev) => (
               <DeveloperCard key={dev.id} developer={dev} />
             ))}
