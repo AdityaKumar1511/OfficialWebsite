@@ -32,6 +32,7 @@ export interface TeamMember {
   };
   socials: SocialLinks;
   quote?: string;
+  cardBgImage?: string;
 }
 
 /** A club team (e.g., Blockchain, Web Dev) */
@@ -110,6 +111,8 @@ export interface Developer {
     y?: number;
     scale?: number;
   };
+  cardBgImage?: string;
+  quote?: string;
 }
 
 /** Navigation link */

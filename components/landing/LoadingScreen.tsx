@@ -3,12 +3,24 @@
 import React, { useState, useEffect } from "react"
 import { SpiderCursor } from "@/components/ui/spider-cursor"
 
+// Module-level variable to persist loading state across client-side navigations
+let hasLoadedSession = false
+
 export default function LoadingScreen() {
   const [progress, setProgress] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
-  const [isVisible, setIsVisible] = useState(true)
+  
+  // Initialize visibility state based on whether we already loaded in this SPA session
+  const [isVisible, setIsVisible] = useState(() => !hasLoadedSession)
 
   useEffect(() => {
+    // Check sessionStorage to handle page refreshes or direct visits safely on client
+    if (typeof window !== "undefined" && sessionStorage.getItem("hasLoadedWnccHome") === "true") {
+      hasLoadedSession = true
+      setIsVisible(false)
+      return
+    }
+
     // Disable scrolling while loading screen is active
     document.body.style.overflow = "hidden"
 
@@ -39,8 +51,12 @@ export default function LoadingScreen() {
         setIsLoaded(true)
         // Allow time for the fade out transition before completely unmounting
         setTimeout(() => {
+          hasLoadedSession = true
           setIsVisible(false)
           document.body.style.overflow = "auto"
+          if (typeof window !== "undefined") {
+            sessionStorage.setItem("hasLoadedWnccHome", "true")
+          }
         }, 800)
       }, 500) // Small pause at 100% before fading out
     }

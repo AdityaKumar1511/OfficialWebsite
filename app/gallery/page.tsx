@@ -12,19 +12,32 @@ export const metadata: Metadata = {
 
 export default function GalleryPage() {
   return (
-    <main className="pt-24">
-      <section className="section-padding">
-        <div className="container-wide">
-          <p className="text-mono text-xs mb-4 tracking-[0.2em]">// GALLERY</p>
-          <h1 className="text-display text-[#51C4F9]">Gallery</h1>
-          <p className="text-body max-w-2xl text-lg mb-12">
-            A visual journey through our events, workshops, and community moments.
-            Click any image to view in full screen.
-          </p>
+    <main className="pt-24 min-h-screen relative overflow-hidden bg-[#050505]">
+      {/* Repeating Grunge Background */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden bg-[#050505]">
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: 'url("/images/bg/bg_grunge_5_1779981354268.png")',
+            backgroundRepeat: 'repeat',
+          }}
+        />
+      </div>
 
-          <GalleryGrid images={GALLERY_IMAGES} categories={GALLERY_CATEGORIES} />
-        </div>
-      </section>
+      <div className="relative z-10">
+        <section className="section-padding">
+          <div className="container-wide">
+            <p className="text-mono text-xs mb-4 tracking-[0.2em]">// GALLERY</p>
+            <h1 className="text-display text-[#51C4F9]">Gallery</h1>
+            <p className="text-body max-w-2xl text-lg mb-12">
+              A visual journey through our events, workshops, and community moments.
+              Click any image to view in full screen.
+            </p>
+
+            <GalleryGrid images={GALLERY_IMAGES} categories={GALLERY_CATEGORIES} />
+          </div>
+        </section>
+      </div>
     </main>
   );
 }

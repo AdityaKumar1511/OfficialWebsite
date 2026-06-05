@@ -59,7 +59,7 @@ export default function DeveloperCard({ developer }: { developer: Developer }) {
         {/* Portrait Container */}
         <div className="mx-2 sm:mx-6 mt-1 relative border-2 sm:border-[4px] border-[#222] h-[135px] xs:h-[160px] sm:h-[260px] flex items-end justify-center rounded-sm overflow-visible"
           style={{ 
-            backgroundImage: 'url("https://res.cloudinary.com/dq1fhihvx/image/upload/v1780581524/original-images/wsyju8apliasuzstyguw.png")', 
+            backgroundImage: `url(${developer.cardBgImage || "https://res.cloudinary.com/dq1fhihvx/image/upload/v1780581524/original-images/wsyju8apliasuzstyguw.png"})`, 
             backgroundSize: 'cover', 
             backgroundPosition: 'center' 
           }}>
@@ -72,9 +72,14 @@ export default function DeveloperCard({ developer }: { developer: Developer }) {
             <img
               src={developer.image}
               alt={developer.name}
-              className="w-[90%] h-[95%] object-cover object-bottom transition-transform duration-500 ease-out group-hover:scale-110"
+              className={developer.id === 'lead-dev'
+                ? "w-full h-full object-contain object-bottom transition-transform duration-500 ease-out group-hover:scale-110"
+                : "w-[90%] h-[95%] object-cover object-bottom transition-transform duration-500 ease-out group-hover:scale-110"
+              }
               style={{
-                objectPosition: `${developer.imagePosition?.x ?? 50}% ${developer.imagePosition?.y ?? 30}%`,
+                objectPosition: developer.id === 'lead-dev'
+                  ? 'bottom center'
+                  : `${developer.imagePosition?.x ?? 50}% ${developer.imagePosition?.y ?? 30}%`,
                 transform: `translate(${x}px, ${y}px) scale(${scale})`,
                 filter: 'drop-shadow(2px 2px 0 white) drop-shadow(-2px -2px 0 white) drop-shadow(-2px 2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(0 25px 25px rgba(0,0,0,0.5)) contrast(1.25)'
               }}

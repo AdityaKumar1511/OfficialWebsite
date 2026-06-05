@@ -102,14 +102,14 @@ export default function TeamSection({ team }: { team: Team }) {
       {/* Team Leader Section */}
       <div className={`flex flex-col items-center w-full ${team.members.length > 0 ? "mb-14" : ""}`}>
         <h3 className="text-mono text-xs mb-6 tracking-[0.2em] text-[var(--text-accent)] text-center">// TEAM LEAD</h3>
-        <div className="flex flex-col gap-8 items-center justify-center w-full max-w-3xl">
+        <div className="flex flex-col lg:flex-row gap-8 items-center justify-center w-full max-w-4xl">
           <div className="w-full max-w-[160px] xs:max-w-[200px] sm:max-w-[325px] flex-shrink-0 member-card">
             <MemberCard member={team.leader} teamColor={team.color} teamName={team.name} />
           </div>
           {team.leader.quote && (
-            <div className="relative flex-grow mt-6 bg-yellow-300 text-[#0e1713] p-6 rounded-2xl border-[3px] border-[#0e1713] shadow-[6px_6px_0px_#0e1713] max-w-md select-none group">
-              {/* Comic bubble pointing top (centered) */}
-              <div className="absolute top-[-10px] left-1/2 -translate-x-1/2 w-5 h-5 bg-yellow-300 border-l-[3px] border-t-[3px] border-[#0e1713] rotate-45" />
+            <div className="relative flex-grow mt-6 lg:mt-0 bg-yellow-300 text-[#0e1713] p-6 rounded-2xl border-[3px] border-[#0e1713] shadow-[6px_6px_0px_#0e1713] max-w-md select-none group">
+              {/* Comic bubble pointing top (mobile) or left (desktop) */}
+              <div className="absolute top-[-10px] left-1/2 -translate-x-1/2 lg:top-1/2 lg:left-[-10px] lg:-translate-y-1/2 lg:translate-x-0 w-5 h-5 bg-yellow-300 border-l-[3px] border-t-[3px] lg:border-t-0 lg:border-b-[3px] border-[#0e1713] rotate-45" />
               
               <span className="font-display font-[900] text-base uppercase tracking-tight block mb-2 text-[#0e1713] drop-shadow-[0.5px_0.5px_0px_rgba(255,255,255,0.6)] text-center">
                 &ldquo; Lead's Directive &rdquo;

@@ -4,6 +4,23 @@
 
 import type { Developer } from '@/lib/types';
 
+export const LEAD_DEVELOPER: Developer = {
+  id: 'lead-dev',
+  name: 'Anurag Mishra',
+  role: 'Lead Dev',
+  image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1780651812/WhatsApp_Image_2026-06-05_at_14.07.14_2_avhznh.png',
+  socials: {
+    linkedin: 'https://www.linkedin.com/in/anurag3407',
+    github: 'https://github.com/anurag3407',
+    email: 'anuragm.ug24.cs@nitp.ac.in',
+  },
+  contributions: [],
+  techStack: [],
+  imageTransform: { x: 20, y: 60, scale: 2.2 },
+  cardBgImage: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1780651832/635ac46f2f327febd17ef76f5ca8ec00_re2f0b.jpg',
+  quote: "Break First , Build later",
+};
+
 export const DEVELOPERS: Developer[] = [
   {
     id: 'dev-1',

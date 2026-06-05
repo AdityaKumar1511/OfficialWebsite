@@ -13,9 +13,19 @@ export const metadata: Metadata = {
 export default function EventsPage() {
   return (
     <main className="min-h-screen bg-black text-white relative overflow-hidden noise-overlay pt-28 pb-16">
+      {/* Repeating Grunge Background */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden bg-black">
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: 'url("/images/bg/bg_grunge_3_1779981313259.png")',
+            backgroundRepeat: 'repeat',
+          }}
+        />
+      </div>
       
       {/* Structural Vertical Grid lines */}
-      <div className="absolute inset-0 container-wide grid grid-cols-4 pointer-events-none z-0">
+      <div className="absolute inset-0 container-wide grid grid-cols-4 pointer-events-none z-5">
         <div className="border-l border-zinc-900/50 h-full w-full" />
         <div className="border-l border-zinc-900/50 h-full w-full" />
         <div className="border-l border-zinc-900/50 h-full w-full" />

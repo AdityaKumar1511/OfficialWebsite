@@ -163,7 +163,7 @@ export default function Footer() {
         {/* ── Bottom bar: copyright ── */}
         <div className="border-t border-white/5 py-4">
           <p className="text-center text-[10px] text-(--text-muted) md:text-xs">
-            © {new Date().getFullYear()} {SITE_CONFIG.fullName}. Built with ❤️ by WnCC developers.
+            © {new Date().getFullYear()} {SITE_CONFIG.fullName}. Built and Maintained by Web and coding club developers.
           </p>
         </div>
 

@@ -30,9 +30,9 @@ export default function Header() {
         <div className="container-wide flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <Image src="/images/logo.png" alt="WnCC" width={44} height={44} className="rounded-sm" />
+            <Image src="/images/logo1.png" alt="WnCC" width={66} height={66} className="rounded-sm" />
             <span className="text-sm text-white/70 tracking-widest uppercase hidden sm:inline font-medium">
-              NIT Patna
+              Web and Coding
             </span>
           </Link>
 
