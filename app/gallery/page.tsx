@@ -16,7 +16,7 @@ export default function GalleryPage() {
       <section className="section-padding">
         <div className="container-wide">
           <p className="text-mono text-xs mb-4 tracking-[0.2em]">// GALLERY</p>
-          <h1 className="text-display gradient-text-sage mb-4">Gallery</h1>
+          <h1 className="text-display text-[#51C4F9]">Gallery</h1>
           <p className="text-body max-w-2xl text-lg mb-12">
             A visual journey through our events, workshops, and community moments.
             Click any image to view in full screen.

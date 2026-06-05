@@ -113,13 +113,6 @@ export default function EventCard({ event, index }: EventCardProps) {
                     // VOL_01
                   </div>
                 </div>
-                <div className="absolute bottom-[8%] right-[25%] w-[22%] h-[32%] bg-[#51C4F9] border border-[#51C4F9] text-black flex flex-col justify-between p-3 font-mono z-30 shadow-xl select-none transition-transform duration-500 group-hover:translate-x-1">
-                  <div className="flex flex-col justify-between h-full">
-                    <span className="text-[8px] font-black leading-none tracking-tight">WnCC //</span>
-                    <span className="text-lg font-black leading-none tracking-widest text-center">CODE</span>
-                    <span className="text-[8px] font-black leading-none text-right">コード</span>
-                  </div>
-                </div>
               </>
             )}
 
@@ -142,13 +135,7 @@ export default function EventCard({ event, index }: EventCardProps) {
                     // SEC_02
                   </div>
                 </div>
-                <div className="absolute top-[8%] right-[32%] w-[24%] h-[30%] bg-[#51C4F9] border border-[#51C4F9] text-black flex flex-col justify-between p-3 font-mono z-30 shadow-xl select-none transition-transform duration-500 group-hover:-translate-x-1">
-                  <div className="flex flex-col justify-between h-full">
-                    <span className="text-[8px] font-black leading-none tracking-tight">TYPE //</span>
-                    <span className="text-base font-black leading-none tracking-widest text-center">SHIELD</span>
-                    <span className="text-[8px] font-black leading-none text-right">技術</span>
-                  </div>
-                </div>
+                
               </>
             )}
 
@@ -171,13 +158,7 @@ export default function EventCard({ event, index }: EventCardProps) {
                     // NUM_03
                   </div>
                 </div>
-                <div className="absolute bottom-[8%] left-[32%] w-[22%] h-[32%] bg-[#51C4F9] border border-[#51C4F9] text-black flex flex-col justify-between p-3 font-mono z-30 shadow-xl select-none transition-transform duration-500 group-hover:-translate-y-1">
-                  <div className="flex flex-col justify-between h-full">
-                    <span className="text-[8px] font-black leading-none tracking-tight">LAB //</span>
-                    <span className="text-lg font-black leading-none tracking-widest text-center">NITP</span>
-                    <span className="text-[8px] font-black leading-none text-right">データ</span>
-                  </div>
-                </div>
+                
               </>
             )}
 
@@ -264,9 +245,9 @@ export default function EventCard({ event, index }: EventCardProps) {
             {event.registrationLink || event.status === 'upcoming' ? (
               <a
                 href={event.registrationLink || '#'}
-                className="inline-block px-7 py-3 text-xs font-mono font-black uppercase tracking-[0.2em] border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-300 active:scale-95 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.15)] hover:shadow-none select-none"
+                className="inline-block px-7 py-3 text-xs font-mono font-black uppercase tracking-[0.2em] border-2 border-white text-white hover:bg-[#51C4F9]  hover:text-black transition-all duration-300 active:scale-95 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.15)] hover:shadow-none select-none"
               >
-                REGISTER NOW
+                COMING SOON
               </a>
             ) : (
               <a

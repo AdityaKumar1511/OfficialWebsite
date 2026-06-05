@@ -1,7 +1,7 @@
 .cf-section {
   position: relative;
   min-height: 100vh;
-  background: #171c15;
+  background: #0d1d1f;
   padding-top: clamp(4.5rem, 8vw, 6.5rem);
   padding-bottom: clamp(2.5rem, 5vw, 4rem);
   padding-left:  clamp(1.5rem, 7vw, 6rem);
