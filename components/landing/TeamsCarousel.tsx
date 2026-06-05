@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Inter, Anton } from 'next/font/google';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'], weight: ['400', '500', '600', '700'] });
 const anton = Anton({ subsets: ['latin'], weight: '400' });
@@ -151,10 +152,10 @@ export default function TeamsCarousel() {
 
         {/* Bottom-right link */}
         <div className="absolute bottom-6 right-4 sm:bottom-20 sm:right-10 z-60" style={{ zIndex: 60 }}>
-          <a href="#discover" className={`flex items-center text-white hover:opacity-100 opacity-95 transition-opacity duration-200 ${anton.className}`} style={{ fontSize: 'clamp(20px, 4vw, 56px)', fontWeight: 400, letterSpacing: '-0.02em', lineHeight: 1, textTransform: 'uppercase' }}>
+          <Link href="/team" className={`flex items-center text-white hover:opacity-100 opacity-95 transition-opacity duration-200 ${anton.className}`} style={{ fontSize: 'clamp(20px, 4vw, 56px)', fontWeight: 400, letterSpacing: '-0.02em', lineHeight: 1, textTransform: 'uppercase', textDecoration: 'none' }}>
             DISCOVER IT
             <ArrowRight className="w-5 h-5 sm:w-8 sm:h-8 ml-2" strokeWidth={2.25} />
-          </a>
+          </Link>
         </div>
       </div>
     </div>
