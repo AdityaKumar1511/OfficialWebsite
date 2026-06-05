@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import SectionHeader from '@/components/ui/SectionHeader';
@@ -78,18 +78,7 @@ const RippedRibbon = ({ initialSeed, className }: { initialSeed: number; classNa
   );
 };
 
-// Sparkle/Diamond Icon at the bottom of each card
-const DiamondStar = () => (
-  <svg 
-    viewBox="0 0 24 24" 
-    className="w-8 h-8 text-[#00D4FF] fill-current animate-pulse transition-transform duration-700 group-hover:rotate-180"
-    style={{ filter: 'drop-shadow(0 0 8px rgba(0, 212, 255, 0.8))' }}
-  >
-    <path d="M12 0 L15.5 8.5 L24 12 L15.5 15.5 L12 24 L8.5 15.5 L0 12 L8.5 8.5 Z" />
-  </svg>
-);
-
-// Staggered Y offsets on desktop (lg and up) for 8 cards
+// Staggered Y offsets on desktop (lg and up) for exactly 8 cards
 const desktopOffsets = [
   'lg:translate-y-8',   // Card 1
   'lg:-translate-y-6',  // Card 2
@@ -98,14 +87,41 @@ const desktopOffsets = [
   'lg:translate-y-6',   // Card 5
   'lg:-translate-y-4',  // Card 6
   'lg:translate-y-8',   // Card 7
-  'lg:-translate-y-10', // Card 8
+  'lg:-translate-y-6',  // Card 8
 ];
 
 export default function WeekendLineup() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // Smooth scroll handler for mobile navigation
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = scrollContainerRef.current.clientWidth * 0.65; // Scroll by 65% of screen width
+      scrollContainerRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <section className="relative w-full bg-[#050505] overflow-hidden select-none">
       {/* SVG Filters */}
       <RippedPaperFilter />
+
+      {/* Scoped CSS Styles to resolve Mobile vs Desktop image scaling & transforms */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        .lineup-portrait-img {
+          transform: translate(var(--tx-mobile, 0px), var(--ty-mobile, 0px)) scale(var(--scale-mobile, 1));
+          transform-origin: bottom center;
+        }
+        @media (min-width: 1024px) {
+          .lineup-portrait-img {
+            transform: translate(var(--tx-desktop, 0px), var(--ty-desktop, 0px)) scale(var(--scale-desktop, 1));
+            transform-origin: bottom center;
+          }
+        }
+      `}} />
 
       {/* 1. TITLE SECTION (Above top ripped tape) */}
       <div className="relative w-full pt-16 pb-12 bg-[#09090b]">
@@ -155,7 +171,8 @@ export default function WeekendLineup() {
         <div className="container-wide relative z-10 px-4 sm:px-6 mx-auto">
           {/* Cards Grid: Mobile swipeable track; Desktop 8-column row */}
           <div 
-            className="flex lg:grid lg:grid-cols-8 gap-4 xl:gap-5 overflow-x-auto lg:overflow-visible pb-8 lg:pb-12 px-4 lg:px-0 snap-x snap-mandatory no-scrollbar"
+            ref={scrollContainerRef}
+            className="flex lg:grid lg:grid-cols-8 gap-4 xl:gap-5 overflow-x-auto lg:overflow-visible pb-8 lg:pb-12 px-4 lg:px-0 snap-x snap-mandatory no-scrollbar scroll-smooth"
             style={{ scrollbarWidth: 'none' }}
           >
             {LINEUP_MEMBERS.map((member, index) => {
@@ -176,9 +193,9 @@ export default function WeekendLineup() {
                   >
                     
                     {/* Background Large Text - Member Name in Bold White (rotated) */}
-                    <div className="absolute inset-0 flex items-center justify-center select-none pointer-events-none opacity-[0.22] group-hover:opacity-[0.32] transition-opacity duration-500 z-0">
+                    <div className="absolute inset-0 flex items-center justify-center select-none pointer-events-none opacity-[0.28] group-hover:opacity-[0.42] transition-opacity duration-500 z-0">
                       <span 
-                        className="text-[3.2rem] sm:text-[4rem] font-black tracking-widest text-white uppercase rotate-90 select-none whitespace-nowrap"
+                        className="text-[3.2rem] sm:text-[4rem] font-black tracking-widest text-white uppercase rotate-90 select-none whitespace-nowrap block text-center"
                         style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                       >
                         {member.name}
@@ -188,16 +205,20 @@ export default function WeekendLineup() {
                     {/* Neon red linear gradient overlay - placed in skewed context to prevent border bleed */}
                     <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-[#FF003C]/80 via-[#FF003C]/15 to-transparent opacity-95 z-20 pointer-events-none" />
 
-                    {/* Inner Content Wrapper - Unskewed to keep portrait and text straight */}
+                    {/* Inner Content Wrapper - Unskewed to keep portrait straight */}
                     <div className="absolute inset-0 w-full h-full transform skew-x-[7deg] sm:skew-x-[10deg] scale-[1.08] origin-center z-10 flex flex-col justify-end">
                       
                       {/* Portrait Image Container - Skewed alignment with scale/translate support */}
                       <div 
-                        className="absolute inset-0 w-full h-full overflow-hidden"
+                        className="absolute inset-0 w-full h-full overflow-hidden lineup-portrait-img"
                         style={{
-                          transform: `translate(${member.imageTransform?.x || 0}px, ${member.imageTransform?.y || 0}px) scale(${member.imageTransform?.scale || 1})`,
-                          transformOrigin: 'bottom center',
-                        }}
+                          '--tx-desktop': `${member.imageTransform?.x || 0}px`,
+                          '--ty-desktop': `${member.imageTransform?.y || 0}px`,
+                          '--scale-desktop': `${member.imageTransform?.scale || 1}`,
+                          '--tx-mobile': `${member.mobileTransform?.x || 0}px`,
+                          '--ty-mobile': `${member.mobileTransform?.y || 0}px`,
+                          '--scale-mobile': `${member.mobileTransform?.scale || 1}`,
+                        } as React.CSSProperties}
                       >
                         <Image 
                           src={member.image}
@@ -208,41 +229,56 @@ export default function WeekendLineup() {
                         />
                       </div>
 
-                      {/* Card Content Overlay */}
-                      <div className="relative p-5 z-25 flex flex-col items-center text-center">
-                        {/* Glowing core diamond */}
-                        <div className="mb-3">
-                          <DiamondStar />
-                        </div>
+                    </div>
 
-                        <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight leading-none mb-1 drop-shadow-md">
-                          {member.name}
-                        </h3>
-                        <p className="text-xs font-semibold text-[#00D4FF] tracking-wider uppercase opacity-95">
-                          {member.role}
-                        </p>
-                      </div>
-
+                    {/* Card Content Overlay - Placed in skewed context to center perfectly, z-30 to stack on top of red gradient */}
+                    <div className="absolute inset-x-0 bottom-0 p-5 z-30 flex flex-col items-center justify-end text-center pb-6">
+                      <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight leading-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] transform skew-x-[7deg] sm:skew-x-[10deg]">
+                        {member.name}
+                      </h3>
                     </div>
                   </div>
                 </Link>
               );
             })}
           </div>
+
+          {/* 3. MOBILE SLIDE BUTTONS (Visible only on mobile/tablet screens below lg) */}
+          <div className="flex lg:hidden justify-center gap-4 mt-8 relative z-30">
+            <button 
+              onClick={() => scroll('left')}
+              className="w-12 h-12 rounded-full border border-[#00D4FF]/30 bg-black/60 text-[#00D4FF] hover:border-[#00D4FF] hover:text-white flex items-center justify-center transition-all active:scale-95 shadow-[0_0_15px_rgba(0,212,255,0.15)] cursor-pointer"
+              aria-label="Slide Left"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button 
+              onClick={() => scroll('right')}
+              className="w-12 h-12 rounded-full border border-[#00D4FF]/30 bg-black/60 text-[#00D4FF] hover:border-[#00D4FF] hover:text-white flex items-center justify-center transition-all active:scale-95 shadow-[0_0_15px_rgba(0,212,255,0.15)] cursor-pointer"
+              aria-label="Slide Right"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+
         </div>
       </div>
 
       {/* BOTTOM TORN PAPER DIVIDER */}
       <RippedRibbon initialSeed={67890} className="relative z-20" />
 
-      {/* 3. LOGO FOOTER SECTION (Below bottom ripped tape) */}
+      {/* 4. LOGO FOOTER SECTION (Below bottom ripped tape) */}
       <div className="relative w-full py-8 bg-[#09090b]">
         <div className="container-wide relative z-10 mx-auto flex flex-col items-center justify-center select-none">
           <Image 
-            src="/images/logo.png" 
+            src="/images/logo1.png" 
             alt="WnCC NIT Patna" 
-            width={44} 
-            height={44} 
+            width={88} 
+            height={88} 
             className="opacity-70 hover:opacity-100 transition-opacity duration-300"
           />
           <span className="text-[10px] tracking-[0.25em] text-[var(--text-muted)] font-bold uppercase mt-2">

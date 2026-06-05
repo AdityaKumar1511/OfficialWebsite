@@ -15,15 +15,17 @@ export const TEAMS: Team[] = [
     color: '#00D4FF',
     leader: {
       id: 'web-lead',
-      name: 'IDK',
+      name: 'Anantam Aftab',
       role: 'Team Lead',
-      image: '',
+      image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1780648005/bg-removed-images/eraupkltniv0hib17bql.png',
       socials: {
         linkedin: 'https://www.linkedin.com/in/varchas-kumar-073a75366/',
         github: 'https://github.com/varchaskumar',
         email: 'varchask.ug25.ec@nitp.ac.in',
       },
       quote: 'The web is the most democratic platform ever created. Let\'s build it right.',
+      imageTransform: { x: 0, y: 0, scale: 1.4 },
+      cardBgImage: '/images/bg/lead.jpg',
     },
     members: [
       {
@@ -206,15 +208,17 @@ export const TEAMS: Team[] = [
     color: '#00BFFF',
     leader: {
       id: 'blockchain-lead',
-      name: 'IDK',
+      name: 'Anurag Mishra',
       role: 'Team Lead',
-      image: '/images/team/placeholder-6.png',
+      image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1773333555/aaaaaaaaaaaameeeeeeeee_kpxcew.png',
       socials: {
-        linkedin: 'https://www.linkedin.com/in/ritesh-yadav-6575573a9?utm_source=share_via&utm_content=profile&utm_medium=member_android',
-        github: 'https://github.com/riteshyadav33302111-cell',
+        linkedin: 'https://www.linkedin.com/in/anurag3407',
+        github: 'https://github.com/anurag3407',
         email: 'riteshy.ug25.cs@nitp.ac.in',
       },
       quote: 'Decentralization isn\'t just technology — it\'s a philosophy of trust.',
+      imageTransform: { x: 0, y: 0, scale: 2.5},
+      cardBgImage: '/images/bg/lead.jpg',
     },
     members: [
       {
@@ -301,15 +305,17 @@ export const TEAMS: Team[] = [
     color: '#FF003C',
     leader: {
       id: 'genai-lead',
-      name: 'IDK',
+      name: 'Sachin Upadhyay',
       role: 'Team Lead',
-      image: '/images/team/placeholder-9.png',
+      image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1780653106/bg-removed-images/lbbfpxymumv8puwoxyzj.png',
       socials: {
         linkedin: 'https://www.linkedin.com/in/satyam-kumar-jha-6a4a4736b?utm_source=share_via&utm_content=profile&utm_medium=member_android',
         github: 'satyamkumarjhaa2008-afk',
-        email: 'satyamj.ug25.ec@nitp.ac.in',
+        email: 'sachinu.ug23.ec@nitp.ac.in',
       },
       quote: 'AI doesn\'t replace creativity — it amplifies it.',
+      imageTransform: { x: 0, y: 0, scale: 2 },
+      cardBgImage: '/images/bg/lead.jpg',
     },
     members: [
       {
@@ -396,15 +402,17 @@ export const TEAMS: Team[] = [
     color: '#FF3366',
     leader: {
       id: 'ml-lead',
-      name: 'IDK',
+      name: 'Aditya Rai',
       role: 'Team Lead',
-      image: '/images/team/placeholder-12.png',
+      image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1780653068/bg-removed-images/lvrbd84ylux2zhfzmhwe.png',
       socials: {
         linkedin: 'https://www.linkedin.com/in/sujal-kumar-56ab91240',
         github: 'https://github.com/SujalKumar-156',
         email: 'Sujalk.ug25.cs@nitp.ac.in',
       },
       quote: 'Data tells the story. ML writes the ending.',
+      imageTransform: { x: 0, y: 0, scale: 1.8 },
+      cardBgImage: '/images/bg/lead.jpg',
     },
     members: [
       {
@@ -515,15 +523,17 @@ export const TEAMS: Team[] = [
     color: '#00A3CC',
     leader: {
       id: 'pr-lead',
-      name: 'IDK',
+      name: 'Aman Khan',
       role: 'Team Lead',
-      image: '/images/team/placeholder-15.png',
+      image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1780653016/bg-removed-images/hdygcos0pmflnegdlc37.png',
       socials: {
         linkedin: 'https://www.linkedin.com/in/rick-roy-43992233a?utm_source=share_via&utm_content=profile&utm_medium=member_android',
         github: 'https://github.com/Rick13211',
         email: 'rickr.ug24.cs@nitp.ac.in',
       },
       quote: 'Great work deserves a great audience.',
+      imageTransform: { x: 0, y: 0, scale: 2.8},
+      cardBgImage: '/images/bg/lead.jpg',
     },
     members: [
       {
@@ -610,17 +620,31 @@ export const TEAMS: Team[] = [
     color: '#A1A6B4',
     leader: {
       id: 'design-lead',
-      name: 'IDK',
+      name: 'Nitish Rai',
       role: 'Team Lead',
-      image: '',
+      image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1780653003/bg-removed-images/ncnda30rs2xcpmhwowta.png',
       socials: {
         linkedin: 'https://www.linkedin.com/in/biswajit-mandal-0b3790273?utm_source=share_via&utm_content=profile&utm_medium=member_android',
         github: 'https://github.com/BiswajitMandal6',
         email: 'biswajitm.ug24.cs@nitp.ac.in',
       },
       quote: 'Design is intelligence made visible.',
+      imageTransform: { x: -20, y: -30, scale: 3 },
+      cardBgImage: '/images/bg/lead.jpg',
     },
     members: [
+      {
+        id: 'design-1',
+        name: 'Harsh Kapadiya',
+        role: 'UI/UX Designer',
+        image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1780652969/bg-removed-images/w84pwywywdrskewr0hrp.png',
+        socials: {
+          linkedin: 'https://www.linkedin.com/in/aastik-verma-096841395?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+          github: 'https://github.com/aastikverma-bit',
+          email: 'aastikv.ug25.cs@nitp.ac.in',
+        },
+        imageTransform: { x: 0, y: 0, scale: 1 },
+      },
       {
         id: 'design-1',
         name: 'Aastik Verma',

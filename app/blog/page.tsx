@@ -24,9 +24,21 @@ export default function BlogPage() {
   const heroInitials = heroPost.author.name.split(' ').map((n) => n[0]).join('');
 
   return (
-    <main className="pt-24">
-      <section className="section-padding">
-        <div className="container-narrow">
+    <main className="pt-24 min-h-screen relative overflow-hidden bg-[#050505]">
+      {/* Repeating Grunge Background */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden bg-[#050505]">
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: 'url("/images/bg/bg_grunge_4_1779981332543.png")',
+            backgroundRepeat: 'repeat',
+          }}
+        />
+      </div>
+
+      <div className="relative z-10">
+        <section className="section-padding">
+          <div className="container-narrow">
 
           {/* ── Header ── */}
           <div className="flex items-end justify-between mb-8">
@@ -309,6 +321,7 @@ export default function BlogPage() {
 
         </div>
       </section>
+      </div>
     </main>
   );
 }

@@ -214,7 +214,12 @@ export default function MemberCard({ member, teamColor = '#D4643B', teamName = '
             
             <div
               className="absolute inset-0 z-0 opacity-90 transition-colors duration-500"
-              style={{ backgroundColor: teamColor }}
+              style={{
+                backgroundImage: member.cardBgImage ? `url(${member.cardBgImage})` : undefined,
+                backgroundColor: member.cardBgImage ? undefined : teamColor,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
             >
               {/* Retro geometric canvas overlay lines */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/10" />

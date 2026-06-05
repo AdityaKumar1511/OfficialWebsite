@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { TEAMS } from '@/lib/data/teams';
-import TeamSection from '@/components/team/TeamSection';
+import TeamsFilteredList from '@/components/team/TeamsFilteredList';
 
 export const metadata: Metadata = {
   title: 'Our Team',
@@ -12,29 +12,37 @@ export const metadata: Metadata = {
 
 export default function TeamPage() {
   return (
-    <main className="pt-24">
-      {/* Hero */}
-      <section className="section-padding pb-8 text-center flex flex-col items-center">
-        <div className="container-wide flex flex-col items-center text-center">
-          <p className="text-mono text-xs mb-4 tracking-[0.2em]">// OUR PEOPLE</p>
-          <h1 className="text-display text-[#51C4F9] mb-4">Our Team</h1>
-          <p className="text-body max-w-2xl text-lg mx-auto">
-            A diverse collective of builders, designers, and thinkers organized into 7 specialized teams.
-            From Team Leads who direct, to the dedicated members who bring projects to life.
-          </p>
-        </div>
-      </section>
+    <main className="pt-24 min-h-screen relative overflow-hidden bg-[#050505]">
+      {/* Repeating Grunge Background */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden bg-[#050505]">
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: 'url("/images/bg/bg_grunge_2_1779981294962.png")',
+            backgroundRepeat: 'repeat',
+          }}
+        />
+      </div>
 
-      <hr className="section-divider" />
-
-      {/* Teams */}
-      <div className="container-wide">
-        {TEAMS.map((team, i) => (
-          <div key={`${team.id}-${i}`}>
-            <TeamSection team={team} />
-            {i < TEAMS.length - 1 && <hr className="section-divider" />}
+      <div className="relative z-10">
+        {/* Hero */}
+        <section className="section-padding pb-8 text-center flex flex-col items-center">
+          <div className="container-wide flex flex-col items-center text-center">
+            <p className="text-mono text-xs mb-4 tracking-[0.2em]">// OUR PEOPLE</p>
+            <h1 className="text-display text-[#51C4F9] mb-4">Our Team</h1>
+            <p className="text-body max-w-2xl text-lg mx-auto">
+              A diverse collective of builders, designers, and thinkers organized into 7 specialized teams.
+              From Team Leads who direct, to the dedicated members who bring projects to life.
+            </p>
           </div>
-        ))}
+        </section>
+
+        <hr className="section-divider" />
+
+        {/* Teams */}
+        <div className="container-wide">
+          <TeamsFilteredList teams={TEAMS} />
+        </div>
       </div>
     </main>
   );
