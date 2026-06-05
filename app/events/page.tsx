@@ -34,7 +34,7 @@ export default function EventsPage() {
             </div>
 
             <h1 
-              className="text-display font-black text-white uppercase tracking-tight mb-4 select-none"
+              className="text-display font-black text-[#51C4F9] uppercase tracking-tight mb-4 select-none"
               style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(3rem, 8vw, 6rem)' }}
             >
               CLUB EVENTS

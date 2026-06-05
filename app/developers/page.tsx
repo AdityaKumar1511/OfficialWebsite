@@ -42,7 +42,7 @@ export default function DevelopersPage() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-16">
             <p className="text-mono text-xs mb-4 tracking-[0.2em] text-[#ff5e13] font-bold uppercase">// THE BUILDERS</p>
-            <h1 className="text-display text-white mb-4 text-5xl md:text-7xl font-black tracking-tight">Developers</h1>
+            <h1 className="text-display text-[#51C4F9] mb-4 text-5xl md:text-7xl font-black tracking-tight">Developers</h1>
             <p className="text-white/60 max-w-2xl mx-auto text-lg">
               Meet the talented individuals who designed, developed, and deployed this website.
               Every pixel, every animation, every line of code — crafted with passion.

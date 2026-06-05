@@ -17,7 +17,7 @@ export default function TeamPage() {
       <section className="section-padding pb-8 text-center flex flex-col items-center">
         <div className="container-wide flex flex-col items-center text-center">
           <p className="text-mono text-xs mb-4 tracking-[0.2em]">// OUR PEOPLE</p>
-          <h1 className="text-display gradient-text-amber mb-4">Our Team</h1>
+          <h1 className="text-display text-[#51C4F9] mb-4">Our Team</h1>
           <p className="text-body max-w-2xl text-lg mx-auto">
             A diverse collective of builders, designers, and thinkers organized into 7 specialized teams.
             From Team Leads who direct, to the dedicated members who bring projects to life.
