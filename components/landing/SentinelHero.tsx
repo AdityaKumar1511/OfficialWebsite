@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect } from 'react';
 import { SpiderCursor } from '@/components/ui/spider-cursor';
+import Link from 'next/link';
 
 export default function SentinelHero() {
   return (
@@ -51,12 +52,20 @@ export default function SentinelHero() {
           className="animate-fade-up opacity-0 flex flex-wrap gap-3 font-bold pointer-events-auto"
           style={{ animationDelay: '0.7s' }}
         >
-          <button className="bg-primary text-primary-foreground px-8 py-4 md:px-8 md:py-4 text-base md:text-sm rounded-sm cursor-pointer hover:brightness-110 transition-all active:scale-[0.97]">
+          <Link 
+            href="/events" 
+            className="bg-[#00D4FF] px-8 py-4 md:px-8 md:py-4 text-base md:text-sm rounded-sm cursor-pointer hover:bg-[#00B8E6] transition-all active:scale-[0.97] flex items-center justify-center no-underline select-none font-bold"
+            style={{ color: '#050505' }}
+          >
             Explore Events
-          </button>
-          <button className="bg-white text-background px-8 py-4 md:px-8 md:py-4 text-base md:text-sm rounded-sm cursor-pointer hover:brightness-90 transition-all active:scale-[0.97]">
+          </Link>
+          <Link 
+            href="/team" 
+            className="bg-white px-8 py-4 md:px-8 md:py-4 text-base md:text-sm rounded-sm cursor-pointer hover:bg-neutral-200 transition-all active:scale-[0.97] flex items-center justify-center no-underline select-none font-bold"
+            style={{ color: '#050505' }}
+          >
             Meet the Team
-          </button>
+          </Link>
         </div>
 
         {/* Trust Line */}
