@@ -21,7 +21,7 @@ export const PI_PROFILE: LeaderProfile = {
   name: 'Dr. Rajesh Kumar',
   title: 'Professor-in-Charge',
   department: 'Department of Computer Science & Engineering',
-  image: '/images/team/pi-placeholder.png',
+  image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1780597822/WhatsApp_Image_2026-06-04_at_15.54.19_vm3jzc.png',
   quote:
     'Technology is the bridge between imagination and reality. WnCC empowers students to cross that bridge every day.',
   designation: 'PI, Web & Coding Club',
@@ -31,7 +31,7 @@ export const PRESIDENT_PROFILE: LeaderProfile = {
   name: 'Anurag Sharma',
   title: 'President',
   department: 'B.Tech CSE, 3rd Year',
-  image: '/images/team/president-placeholder.png',
+  image: 'https://res.cloudinary.com/dq1fhihvx/image/upload/v1780598014/Remove_background_project_-_June_05_2026_at_00.02.11_bkobue.png',
   quote:
     'Building together is not just about code — it\'s about community, growth, and pushing boundaries as one.',
   designation: 'President, WnCC NIT Patna',

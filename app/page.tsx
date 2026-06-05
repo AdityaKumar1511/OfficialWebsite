@@ -6,6 +6,7 @@ import TeamsCarousel from '@/components/landing/TeamsCarousel';
 import PIPresidentSection from '@/components/landing/PIPresidentSection';
 import BentoGrid from '@/components/landing/BentoGrid';
 import GalleryPreview from '@/components/landing/GalleryPreview';
+import WeekendLineup from '@/components/landing/WeekendLineup';
 import RecentEvents from '@/components/landing/RecentEvents';
 import FaqSection from '@/components/landing/FaqSection';
 import ContactForm from '@/components/landing/ContactForm';
@@ -55,6 +56,9 @@ export default function Home() {
       <SectionWrapper textureUrl="/images/bg/bg_grunge_6_1779981369672.png">
         <GalleryPreview />
       </SectionWrapper>
+      <hr className="section-divider" />
+
+      <WeekendLineup />
       <hr className="section-divider" />
       
       <SectionWrapper textureUrl="/images/bg/bg_grunge_7_1779981388104.png">

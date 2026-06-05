@@ -41,10 +41,10 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center mt-8">
           {/* Text */}
           <div className="about-text lg:col-span-3 space-y-6">
-            <p className="text-lg leading-relaxed text-[var(--text-secondary)]">
+            <p className="text-xl sm:text-lg leading-relaxed text-[var(--text-secondary)]">
               {SITE_CONFIG.description}
             </p>
-            <p className="text-body">
+            <p className="text-lg sm:text-base text-body">
               From weekend hackathons to structured bootcamps, from blockchain experiments
               to AI research — we provide the platform, mentorship, and community for students
               to transform their ideas into impactful projects. With 7 specialized teams and
@@ -57,11 +57,11 @@ export default function AboutSection() {
               {values.map((v) => (
                 <div
                   key={v.title}
-                  className="about-value glass-card p-4 flex flex-col gap-2"
+                  className="about-value glass-card p-5 sm:p-4 flex flex-col gap-2"
                 >
                   <span className="text-2xl">{v.icon}</span>
-                  <h4 className="text-sm font-semibold text-[var(--text-primary)]">{v.title}</h4>
-                  <p className="text-xs text-[var(--text-muted)]">{v.desc}</p>
+                  <h4 className="text-base sm:text-sm font-semibold text-[var(--text-primary)]">{v.title}</h4>
+                  <p className="text-sm sm:text-xs text-[var(--text-muted)]">{v.desc}</p>
                 </div>
               ))}
             </div>
