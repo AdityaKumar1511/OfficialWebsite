@@ -217,7 +217,7 @@ function PresidentCard() {
       <div className="relative z-30 px-4 sm:px-6 md:px-10 mt-5 sm:mt-6 md:mt-10 flex flex-col md:flex-row justify-between items-start gap-2 md:gap-4">
         <div>
           <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-[2.2rem] font-bold text-[#F1F3F5] tracking-tight leading-tight">
-            Anurag Sharma
+            Harshit Verma
           </h3>
           <p className="text-[#A1A6B4] text-xs sm:text-sm md:text-[15px] mt-1">
             President, WnCC NIT Patna
@@ -226,7 +226,7 @@ function PresidentCard() {
 
         <div className="text-left md:text-right max-w-[220px]">
           <p className="text-[#A1A6B4]/80 text-xs sm:text-sm leading-relaxed">
-            B.Tech CSE, 3rd Year
+            B.Tech+Mtech CSE, 4th Year
           </p>
         </div>
       </div>
